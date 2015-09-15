@@ -14,7 +14,7 @@ layout: default
     {% for post in site.related_posts limit:3 %}
       <li>
         <h3>
-          <a href="{{ site.baseurl }}{{ post.url }}">
+          <a href="{% if post.external_url %}{{ post.external_url }}{% else %}{{ site.baseurl }}{{ post.url }}{% endif %}">
             {{ post.title }}
             <small>{{ post.date | date_to_string }}</small>
           </a>
@@ -23,3 +23,7 @@ layout: default
     {% endfor %}
   </ul>
 </div>
+
+<h2>Comments</h2>
+
+{% include disqus.html %}
