@@ -172,6 +172,9 @@ h1, h2, h3, h4, h5, h6 {
 .sidebar-item p:last-child {
   margin-bottom: 0;
 }
+.sidebar-item-separator {
+  padding: 1rem 1rem 0.3rem 1rem;
+}
 
 /* Sidebar nav */
 .sidebar-nav {
@@ -193,6 +196,9 @@ a.sidebar-nav-item:focus {
 @media (min-width: 48em) {
   .sidebar-item {
     padding: 1.5rem;
+  }
+  .sidebar-item-separator {
+    padding: 1.5rem 1.5rem 0.3rem 1.5rem;
   }
   .sidebar-nav-item {
     padding-left:  1.5rem;
@@ -354,6 +360,11 @@ a.sidebar-nav-item:focus {
 }
 .related-posts li a:hover small {
   color: inherit;
+}
+
+.follow-me {
+  padding: 1rem 0;
+  border-top: 1px solid #eee;
 }
 
 

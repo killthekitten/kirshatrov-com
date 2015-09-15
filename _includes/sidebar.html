@@ -24,12 +24,21 @@
     {% endfor %}
     {% endcomment %}
 
-    <span class="sidebar-nav-item">Currently v{{ site.version }}</span>
+    <div class="sidebar-item sidebar-item-separator">
+      <p>Social</p>
+    </div>
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item" href="https://twitter.com/kirshatrov">@kirshatrov</a>
+      <a class="sidebar-nav-item" href="https://github.com/kirs">Github</a>
+    </nav>
   </nav>
 
   <div class="sidebar-item">
     <p>
-      &copy; Kir Shatrov {{ site.time | date: '%Y' }}. All rights reserved.
+      Theme based on <a href="http://lanyon.getpoole.com/" rel="nofollow">Lanyon</a> by <a rel="nofollow" href="https://twitter.com/mdo">@mdo</a>.
+    </p>
+    <p>
+      &copy; {{ site.time | date: '%Y' }}. All rights reserved.
     </p>
   </div>
 </div>
