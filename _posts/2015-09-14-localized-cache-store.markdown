@@ -6,7 +6,7 @@ comments: true
 published: true
 ---
 
-Today I got a [question in the Ruby on Rails Core mailing list](https://groups.google.com/forum/#!topic/rubyonrails-core/jRctpsQ-hO4):
+Today I have got a [question in the Ruby on Rails Core mailing list](https://groups.google.com/forum/#!topic/rubyonrails-core/jRctpsQ-hO4):
 
 > Tonight was the first time i faced one new bug on my website, when i saw one cached partial to be returned in another language than currently selected one. That  was i guess because that cache was generated when another locale was enabled.
 Hence, shouldn't local be included by default into cache key?
@@ -54,7 +54,8 @@ end
 I borrowed few ideas from the Functional (tm) approach: `LocalizedCacheStore` wraps existing cache class as a function, and you still have all control on your cache store if you need some options:
 
 {% highlight ruby %}
-config.cache_store = LocalizedCacheStore(ActiveSupport::Cache::RedisStore).new( 'redis://localhost:6379/0/cache', { expires_in: 90.minutes })
+config.cache_store = LocalizedCacheStore(ActiveSupport::Cache::RedisStore).new(
+  'redis://localhost:6379/0/cache', { expires_in: 90.minutes })
 {% endhighlight %}
 
 As for me, it proves the great flexibility of Ruby and Rails: we didn't have to change any framework code, and `LocalizedCacheStore` logic is only 5 lines of code (two of them are `end`s).
