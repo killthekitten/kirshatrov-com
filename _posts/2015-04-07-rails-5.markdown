@@ -1,0 +1,5 @@
+---
+layout: post
+title: "Rails 5: what's new"
+external_url: "https://medium.com/evil-martians/the-rails-5-post-9c76dbac8fc"
+---
