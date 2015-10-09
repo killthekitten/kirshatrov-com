@@ -8,7 +8,7 @@ published: true
 
 <img src="/assets/post-images/confident_ruby.png" alt="Confident Ruby book" style="margin: 0 auto">
 
-Recently I have read a wonderful book by Avdi Grim about Ruby called *Confident Ruby*.
+Recently I have read a wonderful book by Avdi Grim about Ruby called <a href="http://www.confidentruby.com/">*Confident Ruby*</a>.
 
 The book by itself is a collection of useful patterns, grouped by three topics: Collecting Input, Delivering Results and Handling Failure.
 
