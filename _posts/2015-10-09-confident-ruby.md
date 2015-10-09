@@ -41,4 +41,4 @@ Instead of using `NullObject` class globally, it may be a better idea to scope i
 
 <hr/>
 
-Thank you, Avdi! I wish I would read the book in 2013 when it was published, because I could start using all these patterns to write the better code even earlier.
+Thank you, Avdi! I wish I would read the book in 2013 when it was published because I could start using all these patterns to write the better code even earlier.
