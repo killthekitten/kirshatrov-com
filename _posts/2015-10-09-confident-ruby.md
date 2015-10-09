@@ -8,7 +8,7 @@ published: true
 
 <img src="/assets/post-images/confident_ruby.png" alt="Confident Ruby book" style="margin: 0 auto">
 
-Recently, I have read a wonderful book about Ruby, which is called the Confident Ruby, written by Avdi Grim.
+Recently I have read a wonderful book by Avdi Grim about Ruby called *Confident Ruby*.
 
 The book by itself is a collection of useful patterns, grouped by three topics: Collecting Input, Delivering Results and Handling Failure.
 
@@ -41,4 +41,4 @@ Instead of using `NullObject` class globally, it may be a better idea to scope i
 
 <hr/>
 
-Thank you, Avdi! I wish I would the book in 2013 when it was published, because in this way I could start using all these patterns to write the better code even earlier.
+Thank you, Avdi! I wish I would read the book in 2013 when it was published, because I could start using all these patterns to write the better code even earlier.
