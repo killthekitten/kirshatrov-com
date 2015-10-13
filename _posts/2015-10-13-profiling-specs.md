@@ -30,7 +30,7 @@ Later, you can use `bundle exec stackprof` to analize the dump.
 
 In my case, stackprof helped me to realize that most of the time in specs was spent on SASS compilation:
 
-<img src="/assets/post-images/stackprof-rspec.png/" alt="stackprof dump"/>
+<img src="/assets/post-images/stackprof-rspec.png" alt="stackprof dump"/>
 
 Happy debugging!
 
