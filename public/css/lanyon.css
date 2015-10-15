@@ -572,3 +572,45 @@ a.pagination-item:hover {
 .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .sidebar {
   box-shadow: -.25rem 0 .5rem rgba(0,0,0,.1);
 }
+
+.sharing {
+  max-width: 500px;
+}
+
+.subscribe-form {
+  background: rgba(154, 154, 154, 0.15);
+  padding: 0.8rem;
+  margin-bottom: 1rem;
+}
+
+.subscribe-form p {
+  font-size: 15px;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.subscribe-form .email{
+  height: 36px;
+  font-size: 18px;
+  padding: 2px 8px;
+  border-radius: 2px;
+  color: #515151;
+  border: 1px solid #999;
+}
+
+.subscribe-form .button {
+  height: 36px;
+  display: inline-block;
+  border: none;
+  margin: 0;
+  top: -2px;
+  position: relative;
+  background-color: #27ae60;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #fff;
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 700;
+}
