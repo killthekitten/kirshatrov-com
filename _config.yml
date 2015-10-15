@@ -12,6 +12,8 @@ url:                 http://blog.iempire.ru
 baseurl:             ''
 paginate:            5
 
+exclude: [vendor]
+
 # About/contact
 author:
   name:              Kir Shatrov
