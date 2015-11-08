@@ -596,12 +596,16 @@ a.pagination-item:hover {
   border-radius: 2px;
   color: #515151;
   border: 1px solid #999;
+width: 400px;
 }
-
+.subscribe-form form {
+line-height: 1.2;
+}
 .subscribe-form .button {
   height: 36px;
   display: inline-block;
   border: none;
+  border-radius: 2px;
   margin: 0;
   top: -2px;
   position: relative;
