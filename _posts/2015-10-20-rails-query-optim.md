@@ -37,7 +37,7 @@ At some point, I realized that if I only use the latest request entry from the l
 
 After an hour of coding [here is what I’ve got](https://gist.github.com/kirs/d6a3721ad01800f500d9):
 
-<img src="/assets/post-images/logger.png" />
+<img src="{{ site.url }}/assets/post-images/logger.png" />
 
 The beginning of the log entry is in exactly the same format that you have in Rails log. It displays the controller and action, format, params and response code. The next part is all about queries: it shows the query body and traces for every item. Queries that are longer than average are highlighted with red.
 
