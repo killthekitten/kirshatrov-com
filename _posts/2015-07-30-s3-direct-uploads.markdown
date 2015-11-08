@@ -85,7 +85,7 @@ Please notice that we use `ENV` variables to store AWS access and secret keys, d
 
 Now, let's configure the S3 bucket to receive uploads from the browser.
 
-<img src="/assets/post-images/aws-acl.png" alt="AWS S3 CORS button">
+<img src="/assets/post-images/aws-acl.png" alt="AWS S3 CORS button" class="bordered" />
 
 Open AWS Console, go to the bucket properties, open "Permissions" and click on "Add CORS configuration". Then, paste this XML snippet:
 

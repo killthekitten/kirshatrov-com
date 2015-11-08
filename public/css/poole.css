@@ -231,8 +231,9 @@ img {
   display: block;
   max-width: 100%;
   margin: 0 0 1rem;
+}
 
-  /* custom */
+img.bordered {
   border: 6px solid rgba(154, 154, 154, 0.15);
   padding: 10px;
 }

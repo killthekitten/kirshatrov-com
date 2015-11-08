@@ -6,7 +6,7 @@ comments: true
 published: true
 ---
 
-<img src="/assets/post-images/confident_ruby.png" alt="Confident Ruby book" style="margin: 0 auto">
+<img src="/assets/post-images/confident_ruby.png" alt="Confident Ruby book" style="margin: 0 auto" class="bordered" />
 
 Recently I have read a wonderful book by Avdi Grim about Ruby called <a href="http://www.confidentruby.com/">*Confident Ruby*</a>.
 
