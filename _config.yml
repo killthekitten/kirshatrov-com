@@ -24,3 +24,6 @@ author:
 version:             1.0.0
 disqus: true
 disqus_shortname: 'iempire-blog'
+
+gems:
+  - jekyll-sitemap
