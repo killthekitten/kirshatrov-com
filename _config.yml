@@ -10,7 +10,7 @@ tagline:             ''
 description:         'My personal blog, mostly about technical staff.'
 url:                 http://blog.iempire.ru
 baseurl:             ''
-paginate:            5
+paginate:            8
 
 exclude: [vendor]
 
