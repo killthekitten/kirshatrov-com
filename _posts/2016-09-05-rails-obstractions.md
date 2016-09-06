@@ -150,4 +150,4 @@ class PostsControllerTest < ActionDispatch::IntegrationTest
 end
 {% endhighlight %}
 
-**Good news v2**: `ActionController::TestCase` [now gets "as" option](https://github.com/rails/rails/pull/26212), which explicitly tells the request format. You don't have to operate with `@request.headers['CONTENT_TYPE']` anymore.
+**Good news #2**: `ActionController::TestCase` [now gets "as" option](https://github.com/rails/rails/pull/26212), which explicitly tells the request format. You don't have to operate with `@request.headers['CONTENT_TYPE']` anymore.
