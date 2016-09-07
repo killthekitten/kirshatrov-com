@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "When abstractions are wrong: ActionController::TestCase"
+title: "When abstraction is a mistake: ActionController::TestCase"
 date: 2016-09-05
 comments: true
 published: true
@@ -110,7 +110,7 @@ Look at three ways to hit Rails controller with a request. All of them look simi
 
 In my opinion, this is not very straight forward and the **choice of request format should not be hidden from the developer**. As a result, today developer just writes `post :create, post: { title: "my post"}` and doesn't even know which format the request got.
 
-Rails tries to put selection of request data under the hood, but in fact this logic becomes hidden. It would be better to educate developers about request types and make them write more explicit code.
+Rails tries to put selection of request data under the hood (to abstract), but in fact this logic becomes hidden. It would be better to educate developers about request types and make them write more explicit code.
 
 Working with platforms with less magic like Clojure or Go, I would have to explicitly declare the request body:
 
