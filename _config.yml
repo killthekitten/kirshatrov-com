@@ -11,6 +11,8 @@ baseurl:             ''
 paginate:            8
 
 exclude: [vendor]
+markdown: kramdown
+highlighter: rouge
 
 # About/contact
 author:
@@ -25,3 +27,4 @@ disqus_shortname: 'iempire-blog'
 
 gems:
   - jekyll-sitemap
+  - jekyll-paginate

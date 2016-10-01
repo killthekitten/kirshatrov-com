@@ -1,6 +1,7 @@
-# A sample Gemfile
 source "https://rubygems.org"
 
 gem 'github-pages'
-gem "jekyll"
-# gem "rails"
+gem 'jekyll', '~> 3.2.1'
+gem 'jekyll-paginate'
+gem 'kramdown'
+gem 'rouge'
