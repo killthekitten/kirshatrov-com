@@ -6,7 +6,7 @@ comments: true
 published: true
 ---
 
-<img src="{{ site.url }}/assets/post-images/fork.jpg" />
+<img src="{{ site.url }}/assets/post-images/fork.jpg" style="display: block;margin-left: auto;margin-right: auto;" />
 
 When you fork a repo, Github makes your own copy of the project.
 If you forked Rails in 2014, your fork is now 2 years outdated
