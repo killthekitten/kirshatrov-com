@@ -42,6 +42,9 @@ The following command successfully runs `decimal_test.rb` from ActiveModel:
 
 ```
 $ ~/Projects/opensource/jruby/bin/jruby --dev -rbundler/setup -Itest test/cases/type/decimal_test.rb
+
+# to run complete test suite
+$ ~/Projects/opensource/jruby/bin/jruby --dev -rbundler/setup -S rake test
 ```
 
 Talking about JRuby internals, I was amazed with how readable they are when compared with MRI C sources.
