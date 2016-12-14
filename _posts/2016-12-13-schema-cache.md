@@ -28,6 +28,8 @@ Here is the chart with a number of queries not using index: you can totally see 
 
 In Rails <= 5.0, schema cache is serialized and persisted in [Marshal](https://ruby-doc.org/core-2.3.1/Marshal.html). In Rails 5.1, I [changed](https://github.com/rails/rails/pull/27042) schema cache to use YAML to preserve compatibility of serialized cache between different Rails version.
 
+Schema cache is [enabled by default](https://github.com/rails/rails/blob/5-0-stable/activerecord/lib/active_record/railtie.rb#L27) for all Rails apps, but it won't be used unless you have prepared the dump file on your app server with `rake db:schema:cache:dump`.
+
 Anyway, the `SchemaCache` class is only 100 LOC and I suggest that you [check it out](https://github.com/rails/rails/blob/5-0-stable/activerecord/lib/active_record/connection_adapters/schema_cache.rb).
 
 ## Why you may need it?
