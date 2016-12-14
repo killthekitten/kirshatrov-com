@@ -41,6 +41,9 @@
 
           checkbox.checked = false;
         }, false);
+
+        var postLinks = document.querySelectorAll(".post-with-links a");
+        postLinks.forEach(function(el) { el.setAttribute("target", "_blank"); });
       })(document);
     </script>
   </body>
