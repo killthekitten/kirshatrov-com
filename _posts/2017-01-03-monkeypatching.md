@@ -12,7 +12,7 @@ Monkey patching is usually considered as an anti-pattern, but sometimes it can't
 
 The typical use case of monkey patching in a Rails app is a bug fix. If you're using Rails 5 and the bug you're hunting was only fixed in 5.1 which is not released yet, you'd have no other option than to copy-paste the fix and use a monkey patch.
 
-But still, there are good and bad ways to add a monkey patch. This [Pull Request](https://github.com/rails/rails/pull/27437) introduces a configurable options for dumping a database. Before that patch, there was no way to configure dumping flags. Imagine that we're using an older Rails and we still want to pass a custom flag. We'd have to monkeypatch that class:
+But still, there are good and bad ways to add a monkey patch. This [Pull Request](https://github.com/rails/rails/pull/27437) introduces a configurable option for dumping a database. Before that patch, there was no way to configure dumping flags. Imagine that we're using an older Rails and we still want to pass a custom flag. We'd have to monkeypatch that class:
 
 ```ruby
 # config/initializers/active_record_patches.rb
@@ -28,7 +28,7 @@ end
 ActiveRecord::Tasks::MySQLDatabaseTasks.prepend(ActiveRecordDbCommandPatch)
 ```
 
-Why this way to monkey patch is not the best? Because when we upgrade on a new Rails version that has a configurable option, we may forget to clean up and this patch will still live in the app. Even worse, imagine that `run_cmd` method in Rails was refactored and the patch will introduce a bug.
+Why is this way to monkey patch is not the best? Because when we upgrade to a new Rails version that has a configurable option, we may forget to clean up and this patch will still live in the app. Even worse, imagine that `run_cmd` method in Rails was refactored and the patch will introduce a bug.
 
 We can improve it by 1) checking that `run_cmd` is available and 2) that configurable option is not available yet in the current Rails version.
 
