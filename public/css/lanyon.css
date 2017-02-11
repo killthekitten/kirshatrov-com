@@ -41,11 +41,11 @@ body {
 }
 
 html {
-  font-family: "PT Serif", Georgia, "Times New Roman", serif;
+  font-family: PT Sans, Verdana, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-family: PT Sans, Verdana, sans-serif;
   font-weight: 400;
   color: #313131;
   letter-spacing: -.025rem;
@@ -379,7 +379,7 @@ a.sidebar-nav-item:focus {
   overflow: hidden; /* clearfix */
   margin-left: -1rem;
   margin-right: -1rem;
-  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-family: PT Sans, Verdana, sans-serif;
   color: #ccc;
   text-align: center;
 }
@@ -614,7 +614,7 @@ line-height: 1.2;
   text-decoration: none;
   text-transform: uppercase;
   color: #fff;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-family: PT Sans, Verdana, sans-serif;
   -webkit-font-smoothing: antialiased;
   font-weight: 700;
   -webkit-appearance: none;
