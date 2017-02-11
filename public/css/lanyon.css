@@ -94,24 +94,9 @@ h1, h2, h3, h4, h5, h6 {
  */
 
 .masthead {
-  padding-top:    1rem;
-  padding-bottom: 1rem;
-  margin-bottom: 3rem;
   border-bottom: 1px solid #eee;
-}
-.masthead-title {
-  margin-top: 0;
-  margin-bottom: 0;
-  color: #505050;
-}
-.masthead-title a {
-  color: #505050;
-}
-.masthead-title small {
-  font-size: 75%;
-  font-weight: 400;
-  color: #c0c0c0;
-  letter-spacing: 0;
+  min-height: 70px;
+  margin-bottom: 2rem;
 }
 
 @media (max-width: 48em) {
@@ -123,6 +108,18 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+.masthead .left {
+  float: left;
+  left: 0;
+}
+.masthead .right {
+  float: right;
+  right: 0;
+}
+.masthead .link-item {
+  margin: 0 0.3rem;
+  font-size: 90%;
+}
 
 /*
  * Sidebar
@@ -363,10 +360,9 @@ a.sidebar-nav-item:focus {
 }
 
 .follow-me {
-  padding: 1rem 0;
+  padding: 1rem 0 0.5rem;
   border-top: 1px solid #eee;
 }
-
 
 /*
  * Pagination
@@ -573,10 +569,6 @@ a.pagination-item:hover {
   box-shadow: -.25rem 0 .5rem rgba(0,0,0,.1);
 }
 
-.sharing {
-  max-width: 500px;
-}
-
 .subscribe-form {
   background: rgba(154, 154, 154, 0.15);
   padding: 0.8rem;
@@ -596,11 +588,13 @@ a.pagination-item:hover {
   border-radius: 2px;
   color: #515151;
   border: 1px solid #999;
-width: 400px;
+  width: 400px;
 }
+
 .subscribe-form form {
-line-height: 1.2;
+  line-height: 1.2;
 }
+
 .subscribe-form .button {
   height: 36px;
   display: inline-block;
@@ -620,4 +614,46 @@ line-height: 1.2;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
+}
+
+.travels-iframe {
+  width: 100%;
+  min-height: 300px;
+  border: 0;
+}
+
+.sharing {
+  line-height: 0;
+}
+
+.social-links {
+  padding: 0;
+  text-align: center;
+}
+.social-links li {
+  display:inline-block;
+}
+.social-links li .icon {
+  width: 40px;
+  height: 40px;
+  fill: #4C4C4C;
+}
+
+.about-page .things-i-do {
+  list-style-type: none;
+  padding-left: 4px;
+}
+
+.about-page .me-picture {
+  border-radius: 100px;
+  width: 100px;
+}
+
+.talks-list {
+  list-style-type: none;
+  padding-left: 10px;
+  font-size: 120%;
+}
+.talks-list li {
+  margin: 10px 0;
 }

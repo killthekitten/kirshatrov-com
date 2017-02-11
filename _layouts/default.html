@@ -1,11 +1,7 @@
 <!DOCTYPE html>
 <html lang="en-us">
-
   {% include head.html %}
-
   <body>
-
-    {% include sidebar.html %}
 
     <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
          content to avoid any CSS collisions with our real content. -->
@@ -13,8 +9,14 @@
       <div class="masthead">
         <div class="container">
           <h3 class="masthead-title">
-            <a href="{{ site.baseurl }}/" title="Home">{{ site.title }}</a>
-            <small>{{ site.tagline }}</small>
+            <div class="left"><a href="{{ site.baseurl }}">Kir Shatrov</a></div>
+            <div class="right">
+              <a class="link-item" href="{{ site.baseurl }}/" title="About">About</a>
+              <a class="link-item" href="/posts" title="Home">Posts</a>
+              <a class="link-item" href="/talks" title="Talks">Talks</a>
+              <a class="link-item" href="/travels" title="Travels">Travels</a>
+              <a target="_blank" class="link-item" href="https://kir-shatrov.tumblr.com/" title="TIL">TIL</a>
+            </div>
           </h3>
         </div>
       </div>
@@ -23,28 +25,5 @@
         {{ content }}
       </div>
     </div>
-
-    <label for="sidebar-checkbox" class="sidebar-toggle"></label>
-
-    <script>
-      (function(document) {
-        var toggle = document.querySelector('.sidebar-toggle');
-        var sidebar = document.querySelector('#sidebar');
-        var checkbox = document.querySelector('#sidebar-checkbox');
-
-        document.addEventListener('click', function(e) {
-          var target = e.target;
-
-          if(!checkbox.checked ||
-             sidebar.contains(target) ||
-             (target === checkbox || target === toggle)) return;
-
-          checkbox.checked = false;
-        }, false);
-
-        var postLinks = document.querySelectorAll(".post-with-links a");
-        postLinks.forEach(function(el) { el.setAttribute("target", "_blank"); });
-      })(document);
-    </script>
   </body>
 </html>

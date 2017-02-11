@@ -1,35 +1,50 @@
 ---
-layout: default
-title: Home
+layout: page
+title: About
 ---
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a {% if post.external_url %}target="_blank"{% endif %} href="{% if post.external_url %}{{ post.external_url }}{% else %}{{ site.baseurl }}{{ post.url }}{% endif %}">
-        {{ post.title }}
-      </a>
-    </h1>
+<div class="about-page">
+  <img class="me-picture" src="/public/me.jpg"/>
+  <p>Hi, I'm Kir Shatrov.</p>
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
-  </div>
-  {% endfor %}
-</div>
+  <p>I'm a production engineer at <a target="_blank" href="https://shopify.com">Shopify</a>.</p>
 
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}/page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}/">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}/page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
+  <p>
+    I enjoy contributing to open source
+    (<a target="_blank" href="https://github.com/rails/rails/pulls?utf8=%E2%9C%93&q=author%3Akirs%20">especially</a> Ruby on Rails),
+    <a href="/posts">writing</a> about technologies I work with,
+    giving <a href="/talks">talks</a> on tech conferences and
+    <a target="_blank" href="https://storage.googleapis.com/iempire/index-photos/1.jpg">travelling</a>
+    <a target="_blank" href="https://storage.googleapis.com/iempire/index-photos/2.jpg">around</a>
+    <a target="_blank" href="https://storage.googleapis.com/iempire/index-photos/3.jpg">the</a>
+    <a target="_blank" href="https://storage.googleapis.com/iempire/index-photos/4.jpg">world</a>.
+
+    I've <a target="_blank" href="/travels">checked</a> more than 30 countries during the last few years.
+  </p>
+
+  <p>
+    Previously, I worked at <a target="_blank" href="http://evl.ms">Evil Martians</a>, recorded the <a target="_blank" href="http://rubynoname.ru/">Ruby Noname Podcast</a>,
+    coached at <a target="_blank" href="http://railsgirls.com/helsinki">RailsGirls</a>
+    and maintained <a target="_blank" href="https://github.com/capistrano/capistrano">Capistrano</a>.
+  </p>
+
+  <p>Feel free to email me at <a target="_blank" href="mailto:shatrov@me.com">shatrov@me.com</a>.</p>
+
+  <ul class="social-links">
+    <li>
+      <a class="social-icon" target="_blank" href="https://github.com/kirs"><div data-icon="ei-sc-github"></div></a>
+    </li>
+    <li>
+      <a class="social-icon" target="_blank" href="https://facebook.com/shatrov"><div data-icon="ei-sc-facebook"></div></a>
+    </li>
+    <li>
+      <a class="social-icon" target="_blank" href="https://twitter.com/kirshatrov"><div data-icon="ei-sc-twitter"></div></a>
+    </li>
+    <li>
+      <a class="social-icon" target="_blank" href="https://instagram.com/shatrov"><div data-icon="ei-sc-instagram"></div></a>
+    </li>
+    <li>
+      <a class="social-icon" target="_blank" href="https://linkedin.com/in/kirshatrov"><div data-icon="ei-sc-linkedin"></div></a>
+    </li>
+  </ul>
 </div>
