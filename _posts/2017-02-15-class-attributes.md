@@ -146,5 +146,5 @@ In this case it makes more sense to declare a method dynamically rather than use
 ***
 
 I really liked this trick when I found it, and it's the main reason why I wrote this post.
-You may want to avoid using ActiveSupport in smaller non-Rails projects, but now you know
-multiple options of how class-level attributes can be implemented in Ruby.
+Even if you avoid using ActiveSupport in smaller non-Rails projects, now you know
+multiple options of implementing class-level attributes in Ruby.
