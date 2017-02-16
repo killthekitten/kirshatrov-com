@@ -1,6 +1,6 @@
 ---
 layout: post
-title: ActiveSupport and class attributes
+title: Class attributes and ActiveSupport
 date: 2017-02-15
 comments: true
 published: true
