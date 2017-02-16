@@ -41,7 +41,7 @@ class Post
   self.setting = "default"
 end
 
-Post.setting.inspect # => "default"
+Post.setting # => "default"
 ```
 
 However, the default value won't be available in the subclass:
@@ -49,7 +49,7 @@ However, the default value won't be available in the subclass:
 ```ruby
 class Article < Post;end
 
-Article.setting.inspect # => nil
+Article.setting # => nil
 ```
 
 You can fix it by changing the `setting` accessor:
