@@ -192,3 +192,4 @@ you to not even introduce one. If you're intested, you can use one of links belo
 * [Using Rspec bisect to catch order dependent tests](https://thoughtbot.com/upcase/videos/rspec-bisect)
 * [How to Deal With and Eliminate Flaky Tests](https://semaphoreci.com/community/tutorials/how-to-deal-with-and-eliminate-flaky-tests)
 * [Even Ruby core has flaky tests](https://bugs.ruby-lang.org/issues/12776)
+* [Flaky Tests at Google and How We Mitigate Them](https://testing.googleblog.com/2016/05/flaky-tests-at-google-and-how-we.html)
