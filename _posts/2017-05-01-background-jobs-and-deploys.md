@@ -24,7 +24,7 @@ The problem with Sidekiq is that if you deploy and restart workers too frequentl
 
 The issue with Resque is that it has no timeout for graceful shutdown. What if you sent SIGTERM but the current job is going to take five more hours to finish? What if it has infinite loop that runs forever?
 
-In cloud environments like Heroku, there's a platform-wide timeout for graceful termination. For instance Heroku sends SIGTERM and then waits 10 seconds for process to exit. If the process didn't exit, Heroku will kill it in the hard way.
+In cloud environments like Heroku there's a platform-wide timeout for graceful termination. For instance Heroku sends SIGTERM and then waits 10 seconds for process to exit (*upd:* the timeout was [increased](https://devcenter.heroku.com/articles/limits#exit-timeout) to 30 sec). If the process didn't exit, Heroku will kill it in the hard way.
 
 Neither behaviors (Sidekiq and Resque) are ideal. You have to choose between tradeoffs based on what approach is less evil for your business.
 
