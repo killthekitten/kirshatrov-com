@@ -6,7 +6,7 @@ comments: true
 published: true
 ---
 
-<img src="{{ site.url }}/assets/post-images/srecon-eu-2017.png" style="display: block;margin-left: auto;margin-right: auto;" />
+<img src="{{ site.url }}/assets/post-images/srecon-eu-2017.png" style="display: block;margin-left: auto;margin-right: auto;" width="200" />
 
 Earlier this month I went to SREcon Europe in Dublin. This was my first SRE and non-Ruby conference, and it was quite different from the conferences I attended before. I decided to write a quick post about with my impressions and the talks that I liked the most.
 
