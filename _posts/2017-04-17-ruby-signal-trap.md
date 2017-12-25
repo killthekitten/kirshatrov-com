@@ -35,6 +35,8 @@ When the signal is trapped, the current (main) thread is marked with `TRAP_INTER
 
 I found only one place that explicitly forbids from being called inside a signal handler. This place is `Mutex#lock`. It [prevents](https://github.com/ruby/ruby/blob/cf6ec79b37a2efcd477ff76c480c570bcf17bf69/thread_sync.c#L245) user from locking a mutex from the signal handler by the [design](https://bugs.ruby-lang.org/issues/7917). This is not a huge limitation, but it prevents you from using `Logger` which relies on using a mutex. However, `puts` still works.
 
+**Update:** see a [thread](https://bugs.ruby-lang.org/issues/14222) in Ruby bug tracker where contributors discuss what id safe to do from a signal handler.
+
 **Then how do you log from the signal handler?**
 
 I've questioned myself: why can't you use `Logger` inside signal trap when Resque is [doing it](https://github.com/resque/resque/blob/master/lib/resque/worker.rb#L916) without any troubles? The answer is that Resque is using [mono_logger](https://github.com/steveklabnik/mono_logger), which is a mutex-free logger implementation. It works just well from the signal trap!
