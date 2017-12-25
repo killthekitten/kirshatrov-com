@@ -434,3 +434,9 @@ a.pagination-item:hover {
     border-bottom-right-radius: 4px;
   }
 }
+
+.kirs-slides-vertical {
+  width: 375px;
+  height: 530px;
+  margin: 0 auto;
+}
