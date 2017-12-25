@@ -8,11 +8,11 @@ published: true
 
 <img src="{{ site.url }}/assets/post-images/srecon-eu-2017.png" style="display: block;margin-left: auto;margin-right: auto;" width="200" />
 
-Earlier this month I went to SREcon Europe in Dublin. This was my first SRE and non-Ruby conference, and it was quite different from the conferences I attended before. I decided to write a quick post about with my impressions and the talks that I liked the most.
+Earlier this month I went to SREcon Europe in Dublin. This was my non-Ruby conference, and it was quite different from the conferences I attended before. I decided to write a short post with my impressions and links to talks that I liked the most.
 
 The conference takes three days and each day has 4-5 tracks. That’s almost as huge as RailsConf (which is up to 7 tracks). Sometimes I found it hard to choose between talks, especially when you had to forgo three talks to attend a two hour workshop.
 
-Speaking of them, SREcon was full of workshops! Even that I couldn’t stay for all of them, I think the variety of workshops was quite diverse: statistics for engineers, mastering Linux performance tools, introduction to gRPC and technical writing. I was told that at least two of them take place on every SREcon which is pretty cool.
+Speaking of workshops, SREcon was full of them! Even that I couldn’t stay for all workshops, I think the variety of them was quite diverse: Statistics for Engineers, Mastering Linux performance tools, Introduction to gRPC and Technical Writing. I was told that at least two of them take place on every SREcon which is pretty cool.
 
 Overall, the conference was not as technical heavy as I expected. There were maybe a couple presentations with the code, and the rest were either about system design (e.g. load balancing) either about about soft skills like communication and incident management.
 
