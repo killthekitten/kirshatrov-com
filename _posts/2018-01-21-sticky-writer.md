@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Implementing Sticky Writer
+title: Scaling database reads with Sticky Writer
 date: 2018-01-21
 comments: true
 published: true
