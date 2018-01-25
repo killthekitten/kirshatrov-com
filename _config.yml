@@ -6,7 +6,7 @@ permalink:           pretty
 title:               Kir Shatrov
 tagline:             ''
 description:         'My personal blog, mostly about technical staff.'
-url:                 http://iempire.ru
+url:                 http://kirshatrov.com
 baseurl:             ''
 paginate:            8
 paginate_path:       "/posts/page:num/"
@@ -18,7 +18,7 @@ highlighter: rouge
 # About/contact
 author:
   name:              Kir Shatrov
-  url:               https://iempire.ru
+  url:               http://kirshatrov.com
   email:             shatrov@me.com
   twitter:           kirshatrov
 # Custom vars
