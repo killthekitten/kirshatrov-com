@@ -14,7 +14,7 @@ Now, how do you determine which queries would go to reader and which queries wou
 
 However, sending a subset of queries to the reader may still be not enough to reduce load from the writer. What if we send _all_ read-only queries (basically, all SELECTs) to the reader, and let the writer only deal with writes?
 
-The plan sounds double in the theory. Now, let's zoom out to see how the **replication** between the writer and the reader works.
+The plan sounds doable in theory. Now, let's zoom out to see how the **replication** between the writer and the reader works.
 
 All writes that come to the writer instance are appended to the Postgres' [Write Ahead Log](https://www.postgresql.org/docs/current/static/wal-intro.html){:target="_blank"} (WAL). That way, the reader instance can [consume](https://www.postgresql.org/docs/10/static/runtime-config-replication.html){:target="_blank"} updates from writer's WAL and apply them to local replica. It's also common to have multiple replicas - in this case, all these readers would consume WAL from the writer.
 
