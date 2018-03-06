@@ -47,7 +47,7 @@ A common solution to this problem used in the industry is so-called "stickiness"
 
 **In this post, I'll show how you can implement the stickiness in only 50 lines of code.** I stumbled upon this pattern at Shopify but I didn't fully understand it, which made me write this post to learn how it works.
 
-In the example, I'm going to use `pg` driver to work with PostgreSQL from Ruby and [Sequel](http://sequel.jeremyevans.net/){:target="_blank"} an a simple ORM.
+In the example, I'm going to use `pg` driver to work with PostgreSQL from Ruby and [Sequel](http://sequel.jeremyevans.net/){:target="_blank"} as a simple ORM.
 
 We start from setting up two PostgreSQL instances: a writer and a reader. Check out this [script](https://github.com/kirs/sticky-pudding/blob/master/script/create_cluster) that configures the replication and starts two PostgreSQL processes (writer and reader).
 
