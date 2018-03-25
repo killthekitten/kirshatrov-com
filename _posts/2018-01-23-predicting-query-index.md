@@ -77,7 +77,7 @@ Product.where("user_id IS NOT NULL").where(created_at: 1.month.ago..1.week.ago).
 => {}
 ```
 
-If we look how `where_values_hash` is [implemented](https://github.com/rails/rails/blob/412db710dfa6ed84654068576b1841966d7f89b2/activerecord/lib/active_record/relation/where_clause.rb#L49), we’ll see that it reads Arel predicates. Let’s try hooking into Arel:
+If we look how `where_values_hash` is [implemented](https://github.com/rails/rails/blob/412db710dfa6ed84654068576b1841966d7f89b2/activerecord/lib/active_record/relation/where_clause.rb#L49){:target="_blank"}, we’ll see that it reads Arel predicates. Let’s try hooking into Arel:
 
 
 ```ruby
@@ -93,7 +93,7 @@ Product
 
 We could work with `Arel::Nodes::Between` and `Arel::Nodes::Equality`, but we'd still need to extract the column from `"user_id IS NOT NULL"` which is a string.
 
-If we look broader, we’ll find something called [libgda](https://github.com/GNOME/libgda) that has an AST parser of SQL queries. There’s even a [Ruby binding](https://github.com/tenderlove/gda) for it. Let's play with it:
+If we look broader, we’ll find something called [libgda](https://github.com/GNOME/libgda){:target="_blank"} that has an AST parser of SQL queries. There’s even a [Ruby binding](https://github.com/tenderlove/gda){:target="_blank"} for it. Let's play with it:
 
 ```ruby
 class Visitor < GDA::Visitors::Visitor
