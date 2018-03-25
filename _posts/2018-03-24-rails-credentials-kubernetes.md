@@ -71,7 +71,7 @@ And run it with the master key as an ENV variable:
 $ docker run -i -t -p 3000:3000 -e RAILS_MASTER_KEY=3bed2fdcb0261e6f48850de01a85fb5b kirshatrov/secretland:v1
 ```
 
-If you create a silly controller to render secrets, you would see this output:
+If you create a [silly controller](https://github.com/kirs/secretland/blob/master/app/controllers/helloworld_controller.rb#L3){:target="_blank"} to (unsafely) render secrets, you would see this output:
 
 <img src="/assets/post-images/rails-credentials/local.png" width="445" height="183" style="margin: 0 auto;" />
 
