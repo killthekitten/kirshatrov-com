@@ -440,3 +440,5 @@ a.pagination-item:hover {
   height: 530px;
   margin: 0 auto;
 }
+
+.fotorama__dot { width: 6px; height: 6px; }
