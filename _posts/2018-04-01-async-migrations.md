@@ -120,6 +120,8 @@ end
 
 There's quite a few things missing here, but you should get the idea by now: using a combination of two jobs and a database record, we can schedule migrations to run in background one by one.
 
+<img src="/assets/post-images/async-migrations/monodraw.png" width="435" height="313" style="margin: 0 auto;" />
+
 Keep in mind that the code examples are very WIP. If you want to go further, you'd need to take care of these things:
 
 * There's no error handling. We might want to update a status of `AsyncMigration` when migration fails with an error
