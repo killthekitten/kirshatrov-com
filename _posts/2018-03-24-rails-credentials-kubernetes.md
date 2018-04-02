@@ -133,6 +133,24 @@ spec:
 
 Here's the trick: we set the ENV variable (`RAILS_MASTER_KEY`) from the value of the secret that we've created earlier. This allows us to separate secrets from Deployments, and avoid leaking the master key to the Deployment resource. We could even push the YAML with Deployment spec to the application repo.
 
+**Updated:** as suggested by Victor in the comments, it may be better to mount the secret key as a file in `config/master.key`, and Rails would use that instead of the ENV variable. Here's how the `spec.template` part of the YAML would look like in this case:
+
+```yaml
+spec:
+  containers:
+  - image: kirshatrov/secretland:v1
+    name: rails
+    ports:
+    - containerPort: 3000
+  volumes:
+  - name: secrets
+    secret:
+      secretName: secretland-secrets
+      items:
+      - key: rails-master-key
+        path: /app/config/master.key
+```
+
 Let's apply the Deployment and expose it to the internet:
 
 ```bash
