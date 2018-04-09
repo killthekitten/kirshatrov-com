@@ -141,3 +141,4 @@ If working on such things sounds exciting for you, [come join my team](https://w
 ### Further reading
 
 * [Managing db schema changes without downtime by Sam Saffron](https://samsaffron.com/archive/2018/03/22/managing-db-schema-changes-without-downtime){:target="_blank"}
+* [Keep database deploys separate](http://www.philandstuff.com/2018/04/04/keep-database-deploys-separate.html){:target="_blank"}
