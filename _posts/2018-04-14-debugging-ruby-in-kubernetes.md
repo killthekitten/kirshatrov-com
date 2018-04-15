@@ -142,6 +142,8 @@ I'm using Google Cloud, so instead of sshing directly I use `gcloud compute ssh`
 
 ### gdb
 
+gdb might be useful for dumping MRI call stack, for instance when you want to find out why a Ruby process is stuck. See the [script](https://gist.github.com/csfrancis/11376304) to dump call stack by my colleague Scott.
+
 I haven't found a proper way to run gdb from a Kubernetes Pod yet, because gdb can't find Ruby's symbols:
 
 ```
