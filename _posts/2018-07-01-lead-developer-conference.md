@@ -26,7 +26,7 @@ Below is a list of talks that in my opinion are worth sharing.
 
 ### It's personal - the art of giving and receiving code reviews gracefully
 
-I wish I saw this talk by Alexandra Hill a couple years ago! Especially recommended for people who come from direct communication background (like Russia or Germany).
+I wish I saw this talk by **Alexandra Hill** a couple years ago! Especially recommended for people who come from direct communication background (like Russia or Germany).
 
 Alexandra wrote a [blog post](http://www.alexandra-hill.com/2018/06/25/the-art-of-giving-and-receiving-code-reviews/){:target="_blank"} which is essentially an extended version of the talk. Please go and read it.
 
@@ -34,7 +34,7 @@ Alexandra wrote a [blog post](http://www.alexandra-hill.com/2018/06/25/the-art-o
 
 [Slides](https://www.slideshare.net/kevingoldsmith/agile-techniques-for-lead-developers/){:target="_blank"}
 
-This is not a talk about Agile! Kevin Goldsmith speaks about things that you learn when you become a manager (like preparing 1:1s), but my favorite part was about mentoring future leads. Here's his approach to delegating tasks to his reports so they can learn more about lead's responsibilities:
+This is not a talk about Agile! **Kevin Goldsmith** speaks about things that you learn when you become a manager (like preparing 1:1s), but my favorite part was about mentoring future leads. Here's his approach to delegating tasks to his reports so they can learn more about lead's responsibilities:
 
 - Make a list of things to delegate
 - When you delegate a task to your report, ask them to prepare and show the execution plan first
@@ -42,7 +42,7 @@ This is not a talk about Agile! Kevin Goldsmith speaks about things that you lea
 
 ### Tips for managing a widely distributed team
 
-This talk by Dirkjan Bussink was probably my favorite. As someone who works remotely, I was pleased to hear GitHub's approach to building remote culture. There's a lot there that's similar to how we do it at Shopify, as well as something I haven't thought about:
+This talk by **Dirkjan Bussink** was probably my favorite. As someone who works remotely, I was pleased to hear GitHub's approach to building remote culture. There's a lot there that's similar to how we do it at Shopify, as well as something I haven't thought about:
 
 - Have regular team gatherings. Don't do usual work on those. Instead, do project planning, socialize, come up with fun activities like lightening talks, cooking and volunteering. Use this as an opportunity to learn about individuals on your team.
 - Mind timezones. Don't stay online when it's too late your zone. Being on the other side, don't start discussing sensitive matters when it's late someone's time so their evening is not ruined.
@@ -50,7 +50,7 @@ This talk by Dirkjan Bussink was probably my favorite. As someone who works remo
 
 ### The Hardest Scaling Challenge of All - Yourself
 
-A very American-style talk on personal efficiency. Please don't take it too seriously, but it gives good tips:
+A very American-style talk on personal efficiency from **Christian McCarrick**. Please don't take it too seriously, but it gives good tips:
 
 - [Manager READMEs](https://www.managerreadme.com/){:target="_blank"}
 - [The Eisenhower Matrix](https://jamesclear.com/eisenhower-box){:target="_blank"}
