@@ -657,3 +657,7 @@ a.pagination-item:hover {
 .talks-list li {
   margin: 10px 0;
 }
+
+body {
+  color: #2f2f2f;
+}
