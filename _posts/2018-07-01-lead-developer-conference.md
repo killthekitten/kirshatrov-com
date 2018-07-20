@@ -26,11 +26,15 @@ Below is a list of talks that in my opinion are worth sharing.
 
 ### It's personal - the art of giving and receiving code reviews gracefully
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/XY6eA2_2hOg" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 I wish I saw this talk by **Alexandra Hill** a couple years ago! Especially recommended for people who come from direct communication background (like Russia or Germany).
 
 Alexandra wrote a [blog post](http://www.alexandra-hill.com/2018/06/25/the-art-of-giving-and-receiving-code-reviews/){:target="_blank"} which is essentially an extended version of the talk. Please go and read it.
 
 ### Using Agile Techniques to Build a More Inclusive Team
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/Atfxtk2Q90k" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
 
 [Slides](https://www.slideshare.net/kevingoldsmith/agile-techniques-for-lead-developers/){:target="_blank"}
 
@@ -42,6 +46,8 @@ This is not a talk about Agile! **Kevin Goldsmith** speaks about things that you
 
 ### Tips for managing a widely distributed team
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/pi6bHUkoBgY" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 This talk by **Dirkjan Bussink** was probably my favorite. As someone who works remotely, I was pleased to hear GitHub's approach to building remote culture. There's a lot there that's similar to how we do it at Shopify, as well as something I haven't thought about:
 
 - Have regular team gatherings. Don't do usual work on those. Instead, do project planning, socialize, come up with fun activities like lightening talks, cooking and volunteering. Use this as an opportunity to learn about individuals on your team.
@@ -50,15 +56,16 @@ This talk by **Dirkjan Bussink** was probably my favorite. As someone who works 
 
 ### The Hardest Scaling Challenge of All - Yourself
 
+<iframe width="560" height="315" src="https://www.youtube.com/embed/86fqsVWngHI" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+
 A very American-style talk on personal efficiency from **Christian McCarrick**. Please don't take it too seriously, but it gives good tips:
 
 - [Manager READMEs](https://www.managerreadme.com/){:target="_blank"}
 - [The Eisenhower Matrix](https://jamesclear.com/eisenhower-box){:target="_blank"}
-- Use calendar blocking not only for meetings, but also for individual activities (e.g. work for 2 hours on implementing feature X)
+- Use calendar blocking not only for meetings, but also for individual activities (e.g. to reserve 2 hours for working on feature X)
 
 Check out Christian's website with the [talk resources](http://simpleleadership.io/leaddev/){:target="_blank"}.
 
 ---
 
-As you've noticed, I haven't linked **video recordings** of the talk. They are not published yet, but I will update the post as soon as they will be online.
-
+~~As you've noticed, I haven't linked video recordings of the talk. They are not published yet, but I will update the post as soon as they will be online.~~ Updated the post with **video recordings**.
