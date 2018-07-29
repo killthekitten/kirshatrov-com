@@ -70,7 +70,7 @@ carmine:mq:<qname>:ndry-runs    - int, number of times worker(s) have
 
 Note: `mid` is the "message id" in carmine's terminology. You can think of it as a "job id" in Ruby land.
 
-You'll soon start noticing how much of a different approach it is! Refer to the [implementation](https://github.com/ptaoussanis/carmine/blob/master/src/taoensso/carmine/message_queue.clj){:target="_blank"} if you need more clues around how it works.
+You'll soon start noticing how much different is this approach when compared to Resque. `mid-circle` key is essentially a [Circular list](https://redis.io/commands/rpoplpush#pattern-circular-list)){:target="_blank"} that makes the queue reliable. Refer to the [implementation](https://github.com/ptaoussanis/carmine/blob/master/src/taoensso/carmine/message_queue.clj){:target="_blank"} if you need more clues around how it works.
 
 Let's look at Redis operations that happen when jobs are enqueued and processed.
 
@@ -93,7 +93,7 @@ SADD carmine:mq:low:done <job id>
 
 Notice that the `<job id>` stays in the list, but it's marked as "done" so it wouldn't be processed more than once. It will be cleaned up later when another worker takes a "done" job.
 
-I've been amazed how completely different this Redis keys setup is! It allows carmine's message queue to be **fault-tolerant**: if a worker dequeued a job but died later and didn't mark it as "done", it will be processed by another worker after the lock expires.
+I've been amazed how completely different this Redis keys setup is! It allows carmine's message queue to be **resilient** by default: if a worker dequeued a job but died later and didn't mark it as "done", it will be processed by another worker after the lock expires.
 
 Of course you can still do the hack the same feature into Resque, but with its keys structure the implementation would be orders of magnitude more complex (we actually did that at Shopify).
 
@@ -112,3 +112,4 @@ I'm wondering how we can use this as a lesson to:
 ### Further read
 
 * [Celery](http://www.celeryproject.org/){:target="_blank"}, job queue framework in Python. Has lots of interesting features that we (again) miss in Ruby.
+* [Fairway](https://github.com/customerio/fairway){:target="_blank"}, Ruby library for multi-tenant queues on top of Redis.
