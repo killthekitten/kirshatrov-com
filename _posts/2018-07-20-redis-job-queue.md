@@ -70,7 +70,7 @@ carmine:mq:<qname>:ndry-runs    - int, number of times worker(s) have
 
 Note: `mid` is the "message id" in carmine's terminology. You can think of it as a "job id" in Ruby land.
 
-You'll soon start noticing how much different is this approach when compared to Resque. `mid-circle` key is essentially a [Circular list](https://redis.io/commands/rpoplpush#pattern-circular-list)){:target="_blank"} that makes the queue reliable. Refer to the [implementation](https://github.com/ptaoussanis/carmine/blob/master/src/taoensso/carmine/message_queue.clj){:target="_blank"} if you need more clues around how it works.
+You'll soon start noticing how much different is this approach when compared to Resque. `mid-circle` key is essentially a [Circular list](https://redis.io/commands/rpoplpush#pattern-circular-list){:target="_blank"} that makes the queue reliable. Refer to the [implementation](https://github.com/ptaoussanis/carmine/blob/master/src/taoensso/carmine/message_queue.clj){:target="_blank"} if you need more clues around how it works.
 
 Let's look at Redis operations that happen when jobs are enqueued and processed.
 
