@@ -116,4 +116,6 @@ When your app starts to get more and more traffic, it's common to add database r
 
 An alternative to Sticky Writer is to keep track of WAL position and use the position to determine whether to query reader or writer. This solution is very well described in a [post](https://brandur.org/postgres-reads){:target="_blank"} by Brandur. If you're interested in the topic, I'd recommend you to read it to see how an alternative approach can be designed.
 
+If you wonder if there's an existing implementation of Sticky Writer for Rails apps, have a look at the [makara](https://github.com/taskrabbit/makara){:target="_blank"} gem.
+
 For the further reading, I can recommend the _Designing Data-Intensive Applications_ [book](https://dataintensive.net/){:target="_blank"} by Martin Kleppmann. It covers all topics related to scaling databases, including replication strategies and sharding.
