@@ -12,7 +12,7 @@ I love playing with Clojure on my spare time and I stumbled upon a Redis library
 
 Reading the docs, I was surprised to see that it has built-in message queue implementation. It's only about 300 LOC and [one file](https://github.com/ptaoussanis/carmine/blob/master/src/taoensso/carmine/message_queue.clj){:target="_blank"} which was easy to read and understand even at 5am after waking up from jet lag.
 
-But I was even more surprised when I saw how its design around Redis keys for building a message queue. Before we dive into it, let's dig into how Resque and Sidekiq (popular job queue libraries in Ruby) use Redis.
+But I got even more excited when I saw how carmine's design around Redis keys for building a message queue. Before we dive into it, let me show how Resque and Sidekiq (common job queue libraries in Ruby) use Redis.
 
 See Redis keys that they rely on:
 
@@ -29,7 +29,7 @@ When a job is pushed to the `low` queue, the following Redis commands would be c
 
 ```
 SADD resque:queues low
-LPUSH rescue:queue:low <job payload>
+LPUSH resque:queue:low <job payload>
 ```
 
 Now a worker would start and take the job from the queue:
