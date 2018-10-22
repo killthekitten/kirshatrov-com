@@ -77,6 +77,6 @@ Something that I realized when getting my head around it is that all these calcu
 
 In the end, we can promise to serve 5000 RPM with 32 Unicorn processes of 16 workers only when the response time stays around 100ms. If one of the queries hits the database too hard and it starts to return results slower, the response time will increase also, drastically reducing the capacity. It's important to invest into other areas that make your platform resilient: hard timeouts, [circuit breakers, bulkheading](https://github.com/Shopify/semian){:target="_blank"}, and [load shedding](https://en.wikipedia.org/wiki/Load_Shedding){:target="_blank"}.
 
-[Hit me up](kirill.shatrov@shopify.com) if working on this sounds exciting, my team at Shopify is hiring! Our Scalability & Reliability team is all remote and distribured across Canada and Europe.
+[Hit me up](mailto:kirill.shatrov@shopify.com) if working on this sounds exciting, my team at Shopify is hiring! Our Scalability & Reliability team is all remote and distribured across Canada and Europe.
 
 This post is only supposed to be a summary of my findings related to web capacity on non-threaded application servers. By no means, it's a complete guide to calculation your capacity. For instance, it doesn't touch the aspects of threaded web servers (e.g. [Puma](https://github.com/puma/puma){:target="_blank"}) or modeling the capacity of background jobs (e.g., Sidekiq or Resque).
