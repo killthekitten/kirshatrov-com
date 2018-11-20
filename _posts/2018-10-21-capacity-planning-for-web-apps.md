@@ -26,7 +26,7 @@ Let's refresh the terminology first:
 
 **Over-provisioned:** running more capacity than you actually need and probably wasting money.
 
-## Calculating from the scratch
+## Calculating from scratch
 
 Let's say that you get a business requirement to handle the load of 5000 RPS in peak. How do you find the optimal number of application servers required to serve this load?
 
