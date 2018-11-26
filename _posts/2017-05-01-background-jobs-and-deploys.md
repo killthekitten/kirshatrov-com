@@ -60,4 +60,6 @@ I think it's a great constraint to have as it could help to keep your jobs runti
 
 Today I'm working on generic API for resumable/interruptible jobs which would help us to move towards cloud environment where it would be safe to shutdown or restart any background job worker. The main goal of the API would be to make developer define the collection of items to process (records in the database or CSV rows) and the work to be done with each record.
 
-If the API turns our to be successful I'll probably share it publiclly. Ping me if you're have any ideas or if you would like a sneak peek of the API.
+If the API turns our to be successful I'll probably share it publicly. Ping me if you're have any ideas or if you would like a sneak peek of the API.
+
+**Updated Nov 2018:** we published the [job-iteration gem](https://github.com/Shopify/job-iteration) that does exactly what my post describes.
