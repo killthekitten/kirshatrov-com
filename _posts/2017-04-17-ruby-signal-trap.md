@@ -6,9 +6,9 @@ comments: true
 published: true
 ---
 
-> Mixing posix threads and signal handling usually is a bit of a nightmare.
-
-[Ceri Storey, 2013](http://www.mikeperham.com/2013/02/23/signal-handling-with-ruby/#comment-1663908584)
+<div class="kirs-highlighted">
+  <strong>[UPDATED]</strong> Since this post was published, MRI got a <a href="https://github.com/ruby/ruby/blob/trunk/doc/signals.rdoc" target="_blank">documentation page</a> with what's safe and what's not safe to call from signal handlers. I highly recommend reading that one if you've run across my post.
+</div>
 
 I have been debugging signal handlers in Ruby and at some point I started to ask questions that no one could answer.
 The only way to find answers for them was to read the MRI internals. Just in case, I've decided to document my observations

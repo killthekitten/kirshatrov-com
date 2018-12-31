@@ -442,3 +442,8 @@ a.pagination-item:hover {
 }
 
 .fotorama__dot { width: 6px; height: 6px; }
+
+.kirs-highlighted {
+  padding: 16px;
+  background-color: #faebd7ad;
+}
