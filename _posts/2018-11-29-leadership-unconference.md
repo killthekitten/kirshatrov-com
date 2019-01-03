@@ -8,7 +8,7 @@ published: true
 
 <img src="/assets/post-images/eng-leadership-unconference.jpg" alt="Engineering Leadership Unconference"/>
 
-Last weekend I went to the [Engineering Leadership Unconference](https://www.meetup.com/Engineering-leadership-Unconference/) in London. It was the first time I attended the "unconference" sort of event, which unlike as a usual conference, doesn't have a list of speakers or talks.
+Last weekend I went to the [Engineering Leadership Unconference](https://www.meetup.com/Engineering-leadership-Unconference/){:target="_blank"} in London. It was the first time I attended the "unconference" sort of event, which unlike as a usual conference, doesn't have a list of speakers or talks.
 
 Instead, people meet and gather in front of a whiteboard and come up with topics to discuss. Each room is assigned a topic, and attendees are free to choose a room with the most interested discussion.
 
