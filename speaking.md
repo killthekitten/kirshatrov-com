@@ -9,7 +9,7 @@ title: Speaking
   I love giving talks and sharing knowledge, whether by talking about establishing SRE practices or about deep technical problems. The range of topic varies from capacity planning, on-boarding teams to the on-call rotation, ChatOps, to building developer tools for large-scale platforms.
 </p>
 
-<p>
+<p style="text-align:center;">
   <a class="speaking-call-to-action" href="mailto:kir@kirshatrov.com">Tell me about your event</a>
 </p>
 
