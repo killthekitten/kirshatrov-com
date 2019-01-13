@@ -661,3 +661,9 @@ a.pagination-item:hover {
 body {
   color: #2f2f2f;
 }
+
+.speaking-call-to-action {
+  background-color: #268bd2;
+  color: white;
+  padding: 9px;
+}
