@@ -138,6 +138,10 @@ We even post status of migrations to a Slack channel.
 
 If working on such things sounds exciting for you, [come join my team](https://www.shopify.com/careers/production-engineering-service-patterns-fe9022){:target="_blank"} at Shopify.
 
+<div class="kirs-highlighted">
+  <strong>UPDATED:</strong> check out the <a target="_blank" href="https://github.com/Loschcode/rails_async_migrations">rails_async_migrations gem</a> by Laurent Schaffner which brings the idea described in this post to any Rails app.
+</div>
+
 ### Further reading
 
 * [Managing db schema changes without downtime by Sam Saffron](https://samsaffron.com/archive/2018/03/22/managing-db-schema-changes-without-downtime){:target="_blank"}
