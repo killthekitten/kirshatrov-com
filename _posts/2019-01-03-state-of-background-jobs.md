@@ -30,7 +30,7 @@ If your codebase stays around for a decade, you'll have even more queues like "l
 
 The whole concept of queues has issues with aging and scaling in terms of the codebase and people. I'd love to see some other concept of prioritizing jobs between buckets, based on SLOs ("this thing has to run in 5 minutes") and maybe a number-based priority rather than a hardcoded queue name. From the API point, this could look as simple as `slo 5.minutes, weight: 0.5` in the job definition. Why two settings? I could be wrong, but I have a feeling that you'll need some metric for prioritizing when you have a backlog with 5M of "had to run 1 min ago" jobs.
 
-**Concurrency and throttling.** It's common for developers to want their job to run at a certain rate. A good example is 3rd party calls, when you may have 1k jobs per second incoming while you know that the 3rd party provider will not handle that number of calls per second,  even if you've had the capacity to run all of those jobs at once. Webhooks is a real-life example: when your store on Shopify will get a ton of new orders (congrats with large sales!) and you have a webhook endpoint configured, we'll not even attempt to deliver all of those at once because likely those external endpoints would keep up with Shopify's throughput of webhooks. Instead, we'll deliver them at a fixed rate.
+**Concurrency and throttling.** It's common for developers to want their job to run at a certain rate. A good example is 3rd party calls, when you may have 1k jobs per second incoming while you know that the 3rd party provider will not handle that number of calls per second,  even if you've had the capacity to run all of those jobs at once. Webhooks is a real-life example: when your store on Shopify will get a ton of new orders (congrats with large sales!) and you have a webhook endpoint configured, we won't even attempt to deliver them all at once because it's unlikely that those external endpoints will keep up with that throughput of webhooks. Instead, we'll deliver them at a fixed rate.
 
 Another use case is concurrency of `1`, when you want to say "only one job in the scope of X is allowed to run at any given time". You might preserve the order of jobs or not, and the implementation gets quite complex if you do.
 
@@ -50,11 +50,11 @@ Imagine the following scenario: increased traffic to your service leads to milli
 
 If the traffic stays high for longer than a period that's enough to fill Redis, the Redis will get into Out Of Memory (OOM) state, meaning that it can't accept any more writes. To be precise it can still allow the *dequeue* (RPOP) operation, but not *enqueue*.
 
-In contrast with Redis, relational databases like PostgreSQL are backed by the disk rather than RAM, which unlocks them to store more data than they have RAM available. Of course, writing to disk is way slower than writing to memory so that nothing can beat Redis performance - but in a situation when Redis runs on of memory, you'll probably prefer slow writes than no writes at all.
+In contrast with Redis, relational databases like PostgreSQL are backed by the disk rather than RAM, which unlocks them to store more data than they have RAM available. Of course, writing to disk is way slower than writing to memory so that nothing can beat Redis performance - but in a situation when Redis runs out of memory, you'll probably prefer slow writes than no writes at all.
 
-This combination is throttling jobs + limit on how much Redis can store bites you heavily when running web services at a large scale. After all, there must be other open-source databases that somehow provide a message queue without in-memory constraints like Redis. Let's review them.
+When the incoming rate of jobs is higher than the fixed rate delivery, your Redis goes into the danger of filling up. After all, there must be other open-source databases that somehow provide a message queue without in-memory constraints like those Redis has. Let's review them.
 
-**Kafka:** data is persisted to disk, though running a Kafka cluster and consuming from it is a lot trickier compared to Redis, due the distributed nature and more complex protocol.
+**Kafka:** data is persisted to disk, though running a Kafka cluster and consuming from it is a lot trickier compared to Redis, due to its distributed nature and more complex protocol.
 
 **RabbitMQ:** under memory pressure, the persistence layer tries to write as much out to disk as possible, and remove as much as possible from memory.
 
@@ -64,9 +64,9 @@ The next two databases you likely haven't heard about.
 
 **Kestrel:** (unsupported) a message queue database fully backed by disk. It's actually used by GitHub to deliver webhooks on a massive scale, and I guess it's what allowed them to put webhooks on hold during the [October outage](https://blog.github.com/2018-10-30-oct21-post-incident-analysis/){:target="_blank"}, and deliver them later.
 
-**MySQL or PostgreSQL.** It [not](https://github.com/collectiveidea/delayed_job){:target="_blank"} [uncommon](https://github.com/QueueClassic/queue_classic){:target="_blank"} to implement job queue with a relational SQL database, which persists data on disk and allows to store large backlogs with no constraints on RAM.
+**MySQL or PostgreSQL.** It's [not](https://github.com/collectiveidea/delayed_job){:target="_blank"} [uncommon](https://github.com/QueueClassic/queue_classic){:target="_blank"} to implement job queue with a relational SQL database, which persists data on disk and allows to store large backlogs with no constraints on RAM.
 
-**Faktory**. It's not a database per se, but rather a jobs service behind the application, developed by the author of Sidekiq. In the early days, it used **RocksDB**, an embedded database from Facebook, which is backed by the disk - so the number of jobs pushed to Faktory was not limited by RAM, which was great. In the current version, Faktory has [switched](https://github.com/contribsys/faktory/wiki/Redis){:target="_blank"} to Redis as a store instead of RocksDB for good reasons, which means it's not still bound by Redis limits.
+**Faktory**. It's not a database per se, but rather a jobs service behind the application, developed by the author of Sidekiq. In the early days, it used **RocksDB**, an embedded database from Facebook, which is backed by the disk - so the number of jobs pushed to Faktory was not limited by RAM, which was great. In the current version, Faktory has [switched](https://github.com/contribsys/faktory/wiki/Redis){:target="_blank"} to Redis as a store instead of RocksDB for good reasons, which means it's still bound by Redis limitations.
 
 As you see, there's many stores that are able to persist data to disk and avoid in-memory constraints that Redis has.
 
@@ -76,7 +76,7 @@ From my perspective, there are at least three reasons why it's been hard for lar
 
 2) Redis can store not only queues but a lot of other data types, which are often used for jobs metadata outside of queues. If we ever wanted to switch from Redis to an actual message queue, we'd need to find a new home for the rest of data about jobs that is nowadays stored in Redis, for instance locks for [unique jobs](https://github.com/mhenrixon/sidekiq-unique-jobs){:target="_blank"}.
 
-2) Redis is an in-memory store, and memory is incredibly fast to write and read. When you're used to a store that can serve [almost 1M writes per second](https://redis.io/topics/benchmarks){:target="_blank"}, you'll come to a realization that disk is never as fast as RAM, and none of disk-backed stores will be able to give the performance that's close to the in-memory store. Depending on your workloads, switching from Redis would be a hit for performance that you're used to.
+3) Redis is an in-memory store, and memory is incredibly fast to write and read. When you're used to a store that can serve [almost 1M writes per second](https://redis.io/topics/benchmarks){:target="_blank"}, you'll come to a realization that disk is never as fast as RAM, and none of disk-backed stores will be able to give the performance that's close to the in-memory store. Depending on your workloads, switching from Redis would be a hit for performance that you're used to.
 
 We've become so used to a fast in-memory store which made it so hard for us to switch to a slower but more reliable store.
 
@@ -121,13 +121,13 @@ It would be interesting to see if we can come up with some kind of "jobs proxy",
 
 I'm talking about a jobs-specific proxy which would take care of all things like enforcing fairness between tenants, rate limits or load-shed jobs if needed. Even for thousands of workers, we'd need to run only a few replicas of that proxy, so we could largely reduce the overhead for all those features. The worker itself would not be aware of backed database since that will be the concern of a proxy, unlike now when workers talk directly to Redis and we end up implementing resiliency patterns like circuit breaks on top of Redis clients.
 
-The [Faktory](https://github.com/contribsys/faktory){:target="_blank"} project by the author of Sidekiq is very close to what I'm talking about here. It's a Go proxy between job workers and the database, and it takes care of enqueueing and dequeueing jobs while providing extra features like unique jobs and acknowledgment of execution. However, it [deliberately chose](https://github.com/contribsys/faktory/wiki/Redis){:target="_blank"} Redis as storage. In fact, it starts the Redis sub-process inside Faktory, giving very little control of Redis to engineers. This is great for most of Faktory users who may have little experience configuring Redis properly, but I imagine that large-scale consumers would still want to own and monitor Redis by themselves. And Redis still brings all in-memory constraints that I've mentioned above. The max capacity of the queue would be equal to the RAM that Redis has available.
+The [Faktory](https://github.com/contribsys/faktory){:target="_blank"} project by the author of Sidekiq is very close to what I'm talking about here. It's a Go proxy between job workers and the database, and it takes care of enqueueing and dequeueing jobs while providing extra features like unique jobs and acknowledgment of execution. However, it [deliberately chose](https://github.com/contribsys/faktory/wiki/Redis){:target="_blank"} Redis as storage. In fact, it starts the Redis sub-process inside Faktory, giving very little control of Redis to engineers. This is great for most of Faktory users who may have little experience configuring Redis properly, but I imagine that large-scale consumers would still want to own and monitor Redis by themselves. And Redis still brings all the in-memory constraints that I've mentioned above. The max capacity of the queue would be equal to the RAM that Redis has available.
 
 ---
 
 I also have to admit that whatever I imagined in this post could take massive investments and have not too much value for the business, as long as you're able to optimize the current setup with Redis, reduce extra load and make it handle more than it currently does.
 
-Who knows, maybe next Hack Days idea?
+Who knows, maybe this is just an idea for an upcoming Hack Days?
 
 <div class="kirs-highlighted">
   If problems mentioned resonate with what you're working on, I'd be very curious to hear from you! Reach out to <a href="https://twitter.com/kirshatrov">@kirshatrov</a> on Twitter (my DM is open) or at <a href="mailto:kir@kirshatrov.com">kir@kirshatrov.com</a>.
