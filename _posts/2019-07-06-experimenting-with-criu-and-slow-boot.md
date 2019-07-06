@@ -3,7 +3,7 @@ layout: post
 title: Boosting application boot time with container snapshots
 date: 2019-07-06
 comments: true
-published: false
+published: true
 ---
 
 Recently I came across the [CRIU technology](https://criu.org/){:target="_blank"}. It lets you checkpoint any running application and serialize its state on disk, to resume it later from that state. What's more interesting is that it comes with the [Docker integration](https://criu.org/Docker){:target="_blank"}, potentially allowing you to run a container, make a serializable snapshot of it and recreate it later - possibly even on another host.
