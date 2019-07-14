@@ -251,3 +251,4 @@ There is work in Kubernetes required to push for CRIU adoption, however, I see a
 
 * [My setup and benchmarking script](https://gist.github.com/kirs/8e73fef83db2fd3dd8541df04b5ba3d4){:target="_blank"}
 * [A talk about CRIU and Ruby from RubyKaigi](https://rubykaigi.org/2019/presentations/udzura.html){:target="_blank"}
+* Talk about CRIU at Borg: [Task Migration at Scale Using CRIU](https://www.linuxplumbersconf.org/event/2/contributions/69/attachments/205/374/Task_Migration_at_Scale_Using_CRIU_-_LPC_2018.pdf){:target="_blank"}
