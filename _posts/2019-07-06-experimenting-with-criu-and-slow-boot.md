@@ -6,13 +6,13 @@ comments: true
 published: true
 ---
 
-Recently I came across the [CRIU technology](https://criu.org/){:target="_blank"}. It lets you checkpoint any running application and serialize its state on disk, to resume it later from that state. What's more interesting is that it comes with the [Docker integration](https://criu.org/Docker){:target="_blank"}, potentially allowing you to run a container, make a serializable snapshot of it and recreate it later - possibly even on another host.
+Recently I came across the [CRIU technology](https://criu.org/){:target="_blank"}. It lets you checkpoint any running application and serialize its state on disk, to resume it later from that state. What's more interesting is that it comes with [Docker integration](https://criu.org/Docker){:target="_blank"}, potentially allowing you to run a container, make a serializable snapshot of it and recreate it later - possibly even on another host.
 
 This technology might be beneficial for live migrations (in fact, [Google uses it](https://www.linuxplumbersconf.org/event/2/contributions/69/attachments/205/374/Task_Migration_at_Scale_Using_CRIU_-_LPC_2018.pdf){:target="_blank"} to live migrate batch jobs in Borg) - but what excited me is that this could help with the **long boot time problem**. As a Rails app grows, it ends up with more Ruby code to parse and load on boot, which makes the startup time quite long. Autoloading and [bootsnap](https://github.com/Shopify/bootsnap/){:target="_blank"} help in local and CI environments, but in production (where you want to eager-load everything) is still quite slow. It's not uncommon for some of the largest monoliths to take 1+ minute to startup before it's able to serve requests.
 
 Note that I'm using Rails as an example, but technically this applies to any app written in a scripting language with ever-growing database and number of dependencies.
 
-If we could prepare a snapshot of a live application server beforehand and use that to start containers in production, maybe we could **save some of the boot time**? That's is what I wanted to explore.
+If we could prepare a snapshot of a live application server beforehand and use that to start containers in production, maybe we could **save some of the boot time**? That's what I wanted to explore.
 
 The brief content of this post is: 1) setting up a lab with Docker + CRIU to snapshot and restore containers 2) automating that with a script and leveraging compute instances in Google Cloud 3) measuring the savings.
 
@@ -20,7 +20,7 @@ The brief content of this post is: 1) setting up a lab with Docker + CRIU to sna
 
 All CRIU magic is based on Linux kernel features, so Docker for Mac is not an option. I would have to setup a Linux VM with all the dependencies.
 
-One option would be to spin an instance on AWS or GCP, but I've already had VMWave on my Mac, and I wanted to save some terminal latency (my ISP in France was not great!). I went with a Linux Alpine VM in VMWare since I've heard that Alpine is a good lightweight distributive. It wasn't too hard to install CRIU and Docker on it with `apk`. However, as I tried to verify the setup with `criu check` I found that for some reason the Linux kernel that comes with Alpine doesn't have all the features needed for CRIU.
+One option would be to spin an instance on AWS or GCP, but I've already had VMWare on my Mac, and I wanted to save some terminal latency (my ISP in France was not great!). I went with a Linux Alpine VM in VMWare since I've heard that Alpine is a good lightweight distributive. It wasn't too hard to install CRIU and Docker on it with `apk`. However, as I tried to verify the setup with `criu check` I found that for some reason the Linux kernel that comes with Alpine doesn't have all the features needed for CRIU.
 
 I wasn't looking forward building my own kernel, so I went ahead with Ubuntu Server 18.04 LTS which would hopefully come with a full-feature kernel.
 
@@ -179,12 +179,12 @@ I got the results for both apps running on 2 types on VMs: _n1-standard-1_ (sing
 
 The way I measured hot and cold start was by taking the delta in time from since starting the container to being able to serve an HTTP request.
 
-  | Checkpoint size | Checkpoint download | Cold start | Hot start | Perf boost
+  | Checkpoint size | Checkpoint download | RSS | Cold start | Hot start | Perf boost
 -- | -- | -- | -- | -- | -- | -- | --
-Fat-app; 1 vCPU | 44.3 Mb | 2.16s | 18.58s | 7.96s | +2.33x
-Fat-app; 16 vCPU | 44.3 Mb | 1.94s | 20.60s | 6.34s | +3.25x
-Redmine; 1 vCPU | 24.3 Mb | 2.02s | 18.39s | 6.33 | +2.91x
-Redmine; 16 vCPU | 24.3 Mb | 1.95s | 13.48s | 3.71s | +3.63x
+Fat-app; 1 vCPU | 44.3 Mb | 2.16s | 191 Mb | 18.58s | 7.96s | +2.33x
+Fat-app; 16 vCPU | 44.3 Mb | 1.94s | 191 Mb | 20.60s | 6.34s | +3.25x
+Redmine; 1 vCPU | 24.3 Mb | 2.02s | 121 Mb | 18.39s | 6.33 | +2.91x
+Redmine; 16 vCPU | 24.3 Mb | 1.95s | 121 Mb | 13.48s | 3.71s | +3.63x
 
 **Starting the app from a snapshot gives quite a significant boost:** at least 2.3x on a single core machine and at most 3.6x on a VM with more compute power. The difference between CPUs is likely due CPU-bound work to unpack/unserialize the dump. I've also tried it on VMs with SSD disks, but I didn't see as much improvement as after adding more CPUs.
 
@@ -221,7 +221,7 @@ While [CRIU and Linux kernel has support for restoring TCP connections](https://
 
 ### Preparing the snapshot
 
-Before a new release, you'd have to prepare the snapshot of the container to be used in production. This perfectly falls into the model of building release artifacts on the CI. In the end, CI is already most likely involved in building the image and pushing it to the container registry.
+Before a new release, you'd have to prepare the snapshot of the container to be used in production. This perfectly falls into the model of building release artifacts during the CI. In the end, CI is already most likely involved in building the image and pushing it to the container registry.
 
 ### Orchestrated environments
 
