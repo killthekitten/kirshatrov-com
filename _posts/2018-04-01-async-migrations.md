@@ -139,7 +139,11 @@ We even post status of migrations to a Slack channel.
 If working on such things sounds exciting for you, [come join my team](https://www.shopify.com/careers/production-engineering-service-patterns-fe9022){:target="_blank"} at Shopify.
 
 <div class="kirs-highlighted">
-  <strong>UPDATED:</strong> check out the <a target="_blank" href="https://github.com/Loschcode/rails_async_migrations">rails_async_migrations gem</a> by Laurent Schaffner which brings the idea described in this post to any Rails app.
+  <strong>UPDATED (13-Jan-2019):</strong> check out the <a target="_blank" href="https://github.com/Loschcode/rails_async_migrations">rails_async_migrations gem</a> by Laurent Schaffner which brings the idea described in this post to any Rails app.
+</div>
+
+<div class="kirs-highlighted">
+  <strong>UPDATED (16-Feb-2020):</strong> check out the <a target="_blank" href="https://fosdem.org/2020/schedule/event/mysql_github_schema/">talk by Shlomi Noach</a> about how GitHub does schema changes at scale.
 </div>
 
 ### Further reading
