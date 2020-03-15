@@ -29,5 +29,6 @@ disqus_shortname: 'iempire-blog'
 gems:
   - jekyll-sitemap
   - jekyll-paginate
+  - jekyll-seo-tag
 
 include: ['pages']

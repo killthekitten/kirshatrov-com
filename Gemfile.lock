@@ -136,11 +136,12 @@ DEPENDENCIES
   github-pages
   jekyll (~> 3.2.1)
   jekyll-paginate
+  jekyll-seo-tag
   kramdown
   rouge
 
 RUBY VERSION
-   ruby 2.5.3p105
+   ruby 2.6.5p114
 
 BUNDLED WITH
-   1.16.6
+   1.17.3
