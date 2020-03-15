@@ -16,7 +16,12 @@ layout: default
 
 <h2>About the author</h2>
 <div class="kirs-bio">
-  <img src="/assets/layout-images/kirs.webp" class="kirs-bio-pic"/>
+  <picture  class="kirs-bio-pic">
+    <source srcset="/assets/layout-images/kirs.webp" type="image/webp">
+    <source srcset="/assets/layout-images/kirs.jpg" type="image/jpeg">
+    <img src="/assets/layout-images/kirs.jpg" alt="Kir Shatrov">
+  </picture>
+
   <span class="kirs-bio-text">
     Kir Shatrov helps companies to grow by scaling the infrastructure. He likes to write about software, scalability and interesting stories that he runs into at work. Follow him on Twitter to get the latest updates: <a href="https://twitter.com/kirshatrov">@kirshatrov</a>.
   </span>
