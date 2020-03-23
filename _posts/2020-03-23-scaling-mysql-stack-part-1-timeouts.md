@@ -3,7 +3,7 @@ layout: post
 title: "Scaling MySQL stack, ep. 1: Timeouts"
 date: 2020-03-23
 comments: true
-published: false
+published: true
 ---
 
 I've spent a good part of last year collaborating with different teams at work on the theme of scaling our MySQL stack to the next level. For background, like many other companies founded in the mid-2000s (Facebook, YouTube, GitHub, Basecamp), Shopify is a MySQL shop. We've invested a lot into our tooling to manage and scale MySQL, and lately, it's been time to invest in improving ways how applications interact with MySQL.
