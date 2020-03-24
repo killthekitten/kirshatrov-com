@@ -16,7 +16,7 @@ This post is the first in the series, and it will talk about **timeouts** and ho
 
 Commonly, a query that's taking too long to run will eventually time out, and the developer would see an exception. The first thing to find there is whether that's a timeout on the **client** or on the **server** side.
 
-Timeout on the client side means that the client gave us on waiting for the response from the server. It could indicate not only a slow query but also a server that went away without closing the socket, making the client to wait for too long. At least in Ruby's [mysql2](https://github.com/brianmario/mysql2){:target="_blank"} client, client timeout is tweaked through `read_timeout` option.
+Timeout on the client side means that the client gave up on waiting for the response from the server. It could indicate not only a slow query but also a server that went away without closing the socket, making the client to wait for too long. At least in Ruby's [mysql2](https://github.com/brianmario/mysql2){:target="_blank"} client, client timeout is tweaked through `read_timeout` option.
 
 Timeout on the server always means that the query has run too long so MySQL server decided to terminate it.
 
