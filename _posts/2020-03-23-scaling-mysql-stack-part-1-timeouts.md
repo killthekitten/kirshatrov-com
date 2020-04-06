@@ -6,7 +6,7 @@ comments: true
 published: true
 ---
 
-I've spent a good part of last year collaborating with different teams at work on the theme of scaling our MySQL stack to the next level. For background, like many other companies founded in the mid-2000s (Facebook, YouTube, GitHub, Basecamp), Shopify is a MySQL shop. We've invested a lot into our tooling to manage and scale MySQL, and lately, it's been time to invest in improving ways how applications interact with MySQL.
+I've spent a good part of last year collaborating with different people at work on the theme of scaling our MySQL stack to the next level. For background, like many other companies founded in the mid-2000s (Facebook, YouTube, GitHub, Basecamp), Shopify is a MySQL shop. We've invested a lot into our tooling to manage and scale MySQL, and lately, it's been time to invest in improving ways how applications interact with MySQL.
 
 Accounting for all my learnings, I decided to commit not just for a single post about it, but to a **series of at least three posts about scaling MySQL stack.** As always, [follow me on Twitter](https://twitter.com/kirshatrov){:target="_blank"} to be the first to read them.
 
