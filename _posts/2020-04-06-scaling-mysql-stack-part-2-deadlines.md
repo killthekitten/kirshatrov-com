@@ -26,11 +26,13 @@ If we look around for similar concepts in the world of RPC (Remote Procedure Cal
 
 If at the beginning of the request we set the deadline to a timestamp in 30 seconds from now, and make every dependency like the MySQL adapter respect that, we could solve the problem with request timeouts.
 
+<img src="/assets/post-images/2020-deadlines.svg" alt="Request deadlines" class="bordered" style="margin: 0 auto;" />
+
 ## Implementation details
 
 The most common long-taking operation in web apps is SQL queries.
 
-We will use Rails' ActiveRecord as an example of the ORM, but this concept should apply to any stack.
+We will use Rails' ActiveRecord as an example of the ORM, but this concept is applicable to any stack.
 
 The idea of the deadline approach is to hook into the entrypoint of _yet another slow operation_, and fail with an exception there if the deadline has exceeded. For ActiveRecord, that entrypoint is the `execute` method.
 
