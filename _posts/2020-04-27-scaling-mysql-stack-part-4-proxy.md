@@ -71,3 +71,5 @@ Further reading about multiplexing:
 **When** is the right moment to introduce a proxy like ProxySQL or PgBouncer? Watch for the number of open connections on your database and its growth. If you see a surge in traffic that pushes the number of open connections above 1k, and the DB is struggling on the CPU, having a proxy should help.
 
 What would you like me to write about in the next post of the **Scaling MySQL stack series**? Please let me know by replying in comments or by sending me a tweet.
+
+Other posts in the series: [Episode 1: Timeouts](/2020/04/06/scaling-mysql-stack-part-1-timeouts/) &bull; [Episode 2: Deadlines](/2020/04/06/scaling-mysql-stack-part-2-deadlines/) &bull; [Episode 3: Observability](/2020/04/16/scaling-mysql-stack-part-3-observability/)

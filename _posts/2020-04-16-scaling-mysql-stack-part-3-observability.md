@@ -71,3 +71,4 @@ In addition to that, the trick with query annotations that I described lets you 
 
 In the next post in the series, we will talk about **SQL proxies** and how they can buy you a 100x performance on the same hardware.
 
+Other posts in the series: [Episode 1: Timeouts](/2020/04/06/scaling-mysql-stack-part-1-timeouts/) &bull; [Episode 2: Deadlines](/2020/04/06/scaling-mysql-stack-part-2-deadlines/) &bull; [Episode 4: Proxies](/2020/04/27/scaling-mysql-stack-part-4-proxy/)

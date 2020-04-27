@@ -169,3 +169,5 @@ We use to think that query timeout is configured globally, while the latest vers
 Using dynamic timeouts, you can enforce the best defaults on new code while keeping compatibility for features that required longer timeouts. Doing that will pontentially allow extra query throughput during overload and will limit the blast radius of disruptions.
 
 In the next post of **Scaling MySQL stack series**, I'm going to write about the concept of **deadlines** and how they could be leveraged in a production app.
+
+Other posts in the series: [Episode 2: Deadlines](/2020/04/06/scaling-mysql-stack-part-2-deadlines/) &bull; [Episode 3: Observability](/2020/04/16/scaling-mysql-stack-part-3-observability/) &bull; [Episode 4: Proxies](/2020/04/27/scaling-mysql-stack-part-4-proxy/)

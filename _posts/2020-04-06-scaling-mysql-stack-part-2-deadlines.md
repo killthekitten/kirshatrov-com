@@ -96,3 +96,5 @@ This is not a silver bullet -- to make deadlines cover 100% of cases, you'll nee
 We’ve had deadlines enabled in production at Shopify for months now, and it's been excellent at helping to clean up and save resources on slow code paths. And I’d love to contribute the Deadlines work in **Ruby on Rails upstream** - hit me up if you want to help me to do that!
 
 In the next post of **Scaling MySQL stack series**, I'm going to write about adding **observability** into all SQL queries, which especially comes useful for multi-tenant apps.
+
+Other posts in the series: [Episode 1: Timeouts](/2020/04/06/scaling-mysql-stack-part-1-timeouts/) &bull; [Episode 3: Observability](/2020/04/16/scaling-mysql-stack-part-3-observability/) &bull; [Episode 4: Proxies](/2020/04/27/scaling-mysql-stack-part-4-proxy/)
