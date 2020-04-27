@@ -12,6 +12,8 @@ Accounting for all my learnings, I decided to commit not just for a single post 
 
 ---
 
+The [previous post](/2020/04/06/scaling-mysql-stack-part-2-deadlines/) in the series talked about the concept of Deadlines and how to introduce them to a mature codebase.
+
 In today's post, we will talk about observability of live queries to the database.
 
 Imagine that your app is online and it's receiving some traffic. The database is slightly under pressure and you want to investigate what part of the code is giving it the most stress.
