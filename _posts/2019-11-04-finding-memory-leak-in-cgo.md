@@ -24,7 +24,7 @@ The first thing to do was to add `import _ "net/http/pprof"` and attach to the p
 
 However, attaching to a process with RSS of **hundreds of megabytes**, you could see Go's heap only being less than hundred of Mb. This meant that the memory was taken by something outside of the Go's VM. Go profiler would't be able to show any of that memory.
 
-What could it be? We use [gozk](https://github.com/Shopify/gozk){:target="_blank"} as a Zookeeper client. gozk is using [gco](https://golang.org/cmd/cgo/){:target="_blank"} to call out to libzookeeper, a C client for Zookeper.
+What could it be? We use [gozk](https://github.com/Shopify/gozk){:target="_blank"} as a Zookeeper client. gozk is using [cgo](https://golang.org/cmd/cgo/){:target="_blank"} to call out to libzookeeper, a C client for Zookeper.
 
 Usually when there's C involved, there's a memory leak somewhere there. I saw a bunch of mallocs in gozk's code, not saying about the generated C code in `libzookeeper` that was even more tricky to follow.
 
