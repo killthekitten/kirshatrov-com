@@ -6,8 +6,6 @@ comments: true
 published: true
 ---
 
-*This post will actually ask more question than it will answer, but it should be still an interesting read for everyone who’s curious about concurrency and Ruby’s future.*
-
 Ractor, the new concurrency primitive in Ruby, [has been merged](https://github.com/ruby/ruby/pull/3365){:target="_blank"} to the upstream few days ago. I’ve been following that PR and watching the author’s [talk at RubyKaigi](https://youtu.be/2ZcdiVSERuY?t=476){:target="_blank"}, which got me excited to try Ractor myself.
 
 A web application server is the first thing that comes to mind when playing with concurrency. On top of that, not too long ago I’ve implemented TCP servers in Rust and Go, so I got curious to write a **simple web server using Ractor**.
@@ -68,6 +66,7 @@ CPU_COUNT = 4
 workers = CPU_COUNT.times.map do
   Ractor.new do
     loop do
+      # receive TCPSocket
       s = Ractor.recv
 
       request = s.gets
@@ -84,6 +83,7 @@ end
 
 loop do
   conn, _ = server.accept
+  # pass TCPSocket to one of the workers
   workers.sample.send(conn, move: true)
 end
 ```
@@ -92,11 +92,12 @@ We start the number of workers that equals the number of CPUs and have the main 
 
 However, distributing requests among workers using `workers.sample` is not very efficient. That random worker might still be busy serving the previous request. We'd rather have workers pull from a shared queue where we'd send all requests.
 
-I wanted to make that part better, but I didn't find any Ractor-friendly queue implementation. However, the [doc](https://github.com/ko1/ruby/blob/dc7f421bbb129a7288fade62afe581279f4d06cd/doc/ractor.md){:target="_blank"} suggesting using a pipe like a queue. Here's what I got working:
+I wanted to make that part better but I didn't find any Ractor-friendly queue implementation. However, the [doc](https://github.com/ko1/ruby/blob/dc7f421bbb129a7288fade62afe581279f4d06cd/doc/ractor.md){:target="_blank"} suggesting using a pipe like a queue. Let's try that!
 
 ```ruby
 require 'socket'
 
+# pipe aka a queue
 pipe = Ractor.new do
   loop do
     Ractor.yield(Ractor.recv, move: true)
@@ -132,7 +133,7 @@ It worked! By using the pipe I was able to make all workers to pull for sockets 
 
 What's still not great is that there's nothing that monitors workers in case one of them unexpectedly dies. And similar to [Puma's architecture](https://github.com/puma/puma/blob/master/docs/architecture.md){:target="_blank"}, it would be more efficient to have a separate thread to wait for sockets to become ready to read before passing them to actual workers.
 
-I was able to move listener into its own ractor and to make the main thread to watch all ractors:
+I was able to move listener into its own Ractor and to make the main thread to watch all Ractors:
 
 ```ruby
 require 'socket'
@@ -178,11 +179,11 @@ end
 
 Again, it worked!
 
-The next step of implementing a web server would be to bake HTTP parser to read request headers. There's a [http-parser](https://github.com/cotag/http-parser){:target="_blank"} gem that is using C code, and I've heard that is not supported by Ractor yet.
+The next step of implementing a web server would be to bake a HTTP parser to read request headers. There's a [http-parser](https://github.com/cotag/http-parser){:target="_blank"} gem that is using a C extension, and I've heard that is not supported by Ractor yet.
 
-I found an HTTP parser that comes as a part of WEBrick which is a build into Ruby's standard library.
+I found an HTTP parser that comes as a part of WEBrick which is a built into Ruby's standard library.
 
-I tried the following snipped:
+I tried the following snippet:
 
 ```ruby
 require 'webrick'
@@ -209,7 +210,7 @@ end
 
 `WEBrick::Config::HTTP` turned to be a mutable hash with some configuration objects. Since that constant and a hash were initialized in the main thread, it wasn't allowed to be safely used from ractors. I worked around by inlining the hash definition but then I hit another non-shareable constant referenced from the WEBrick code that wasn't too easy to inline.
 
-This is probably the part that will improve on the upstream very soon, after all, this is the earliest Ractor implementation.
+This is probably the part that will improve on the upstream very soon. After all, this is the earliest Ractor implementation.
 
 ## The end
 
@@ -217,6 +218,6 @@ I'm really excited about new concurrency primitives like Ractor getting pushed i
 
 The Ractor model seems powerful and ready for experimental use. Within the next 6 months (Ruby 3.0 release is scheduled for December), I foresee a Ractor-based web server to come out to leverage this feature and get the most out of server CPUs. This is a great opportunity to learn concurrent programming and to contribute to the Ruby community.
 
-For those curious to try Ractor, I'd suggest to try implementing other problems that benefit from parallel execution, for instance a background job processor.
+For those curious to try Ractor, I'd suggest to try implementing other things that benefit from parallel execution, for instance a background job processor.
 
 To try Ractor, you'll need to build Ruby from the upstream. Read my previous posts ([Contributing to Ruby MRI](https://kirshatrov.com/2020/01/11/contributing-to-mri/){:target="_blank"}) to learn about how to do that.
