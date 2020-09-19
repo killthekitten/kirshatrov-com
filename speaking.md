@@ -15,6 +15,12 @@ title: Speaking
 
 ## Previous talks
 
+### NoRuKo 2020: Sleeping on the job by Julik Tarkhanov & Kir Shatrov
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/aEVVbFn0_A4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+We all love our Sidekiq’s and our Resque’s. But they do let us down sometimes. Not because they are bad, but because the queueing theory is limiting us. There is a way to break out of the madness though - let’s explore how to get our job queues under control.
+
 ### RailsConf 2018: Operating Rails in Kubernetes
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/KKtS0QD5ERM" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
