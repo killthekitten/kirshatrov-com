@@ -6,7 +6,7 @@ comments: true
 published: true
 ---
 
-Ractor, the new concurrency primitive in Ruby, [has been merged](https://github.com/ruby/ruby/pull/3365){:target="_blank"} to the upstream few days ago. I’ve been following that PR and watching the author’s [talk at RubyKaigi](https://youtu.be/2ZcdiVSERuY?t=476){:target="_blank"}, which got me excited to try Ractor myself.
+Ractor, the new concurrency primitive in Ruby, [has been merged](https://github.com/ruby/ruby/pull/3365){:target="_blank"} to the upstream few days ago. I’ve been following that PR and watching the author’s [talk at RubyKaigi](https://www.youtube.com/watch?v=40t8EPpnujg&list=PLbFmgWm555yZeLpdOLhYwORIF9UjBAFHw&index=17){:target="_blank"} (in Japanese, I wasn't able to find the translated version but it should be available _somewhere_), which got me excited to try Ractor myself.
 
 A web application server is the first thing that comes to mind when playing with concurrency. On top of that, not too long ago I’ve implemented TCP servers in Rust and Go, so I got curious to write a **simple web server using Ractor**.
 
