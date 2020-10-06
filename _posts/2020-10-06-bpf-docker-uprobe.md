@@ -6,7 +6,7 @@ comments: true
 published: true
 ---
 
-Couple days ago at work I found myself needing to trace [BPF's _uprobes_](https://github.com/iovisor/bcc/blob/master/docs/reference_guide.md#4-uprobes) while investigating an issue with `libzookeeper`.
+Couple days ago at work I found myself needing to trace [BPF's _uprobes_](https://github.com/iovisor/bcc/blob/master/docs/reference_guide.md#4-uprobes){:target="_blank"} while investigating an issue with `libzookeeper`.
 
 Normally, running a `uprobe` / `uretprobe` is as easy as passing the path to the library and the function name:
 
@@ -39,7 +39,7 @@ $ docker inspect 7c029e58e434 | grep overlay
   "Name": "overlay2"
 ```
 
-[Overlay](https://www.kernel.org/doc/Documentation/filesystems/overlayfs.txt) is the magical layer-based filesystem that backs Docker layers. `MergedDir` (== `/var/lib/docker/overlay2/a40fd6684803e3cc28c9f69bf948433a12b791916fca3b5c50914e8afb712ef5/merged`) is what we're interested in. That's the directory with the container's filesystem.
+[Overlay](https://www.kernel.org/doc/Documentation/filesystems/overlayfs.txt){:target="_blank"} is the magical layer-based filesystem that backs Docker layers. `MergedDir` (== `/var/lib/docker/overlay2/a40fd6684803e3cc28c9f69bf948433a12b791916fca3b5c50914e8afb712ef5/merged`) is what we're interested in. That's the directory with the container's filesystem.
 
 If we know that the library is located in `/usr/lib/x86_64-linux-gnu/libzookeeper_mt.so.2.0.0` inside the container, we can combine that with `MergedDir` and check if that path exists:
 
@@ -68,4 +68,4 @@ Attaching 1 probe...
 
 In my case, it me helped to find out that from time to time, `zoo_set2` returns `-4` which is an error code.
 
-Note that I was running `bpftrace` from the host - thanks to the [toolbox](https://cloud.google.com/container-optimized-os/docs/how-to/toolbox), BPF tools were pre-installed there. Another option would be to install `bpftrace` right into my container. In that case I wouldn't need to lookup overlay paths and `MergedDir`. But from my experience, installing `bpftrace` into a container would take more time than these extra steps required to run it from the host, which is why I prefered this approach.
+Note that I was running `bpftrace` from the host - thanks to the [toolbox](https://cloud.google.com/container-optimized-os/docs/how-to/toolbox){:target="_blank"}, BPF tools were pre-installed there. Another option would be to install `bpftrace` right into my container. In that case I wouldn't need to lookup overlay paths and `MergedDir`. But from my experience, installing `bpftrace` into a container would take more time than these extra steps required to run it from the host, which is why I prefered this approach.
