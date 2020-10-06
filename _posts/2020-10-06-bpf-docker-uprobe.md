@@ -67,3 +67,5 @@ Attaching 1 probe...
 ```
 
 In my case, it me helped to find out that from time to time, `zoo_set2` returns `-4` which is an error code.
+
+Note that I was running `bpftrace` from the host - thanks to the [toolbox](https://cloud.google.com/container-optimized-os/docs/how-to/toolbox), BPF tools were pre-installed there. Another option would be to install `bpftrace` right into my container. In that case I wouldn't need to lookup overlay paths and `MergedDir`. But from my experience, installing `bpftrace` into a container would take more time than these extra steps required to run it from the host, which is why I prefered this approach.
