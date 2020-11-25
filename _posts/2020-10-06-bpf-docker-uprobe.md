@@ -20,6 +20,8 @@ Turns out it's not too hard, but I tend to forget things, so I decided to write 
 
 ---
 
+**UPD (2020/11/25): there's an easier way to do this! Scroll down the post to see it.** I left the original steps in the post for a historical reference.
+
 First, let's get container's ID:
 
 ```
@@ -66,6 +68,34 @@ Attaching 1 probe...
 ^C
 ```
 
-In my case, it me helped to find out that from time to time, `zoo_set2` returns `-4` which is an error code.
+**UPD (2020/11/25): as suggested by Dale Hamel, there's an easier way to do all of this!**
 
-Note that I was running `bpftrace` from the host - thanks to the [toolbox](https://cloud.google.com/container-optimized-os/docs/how-to/toolbox){:target="_blank"}, BPF tools were pre-installed there. Another option would be to install `bpftrace` right into my container. In that case I wouldn't need to lookup overlay paths and `MergedDir`. But from my experience, installing `bpftrace` into a container would take more time than these extra steps required to run it from the host, which is why I prefered this approach.
+We still need to grab container's PID with `docker inspect`:
+
+```bash
+# ab31c58d2d03 is container ID from docker ps
+$ docker inspect ab31c58d2d03 | grep -m1 Pid
+            "Pid": 1922,
+```
+
+And then we point `bpftrace` to the filesystem of that PID, which [maps](https://man7.org/linux/man-pages/man5/proc.5.html) to `/proc/<PID>/root`:
+
+```
+$ bpftrace -e 'uretprobe:/proc/<CONTAINER-PID>/root/usr/lib/x86_64-linux-gnu/libzookeeper_mt.so.2.0.0:zoo_set2 { printf("%d\n", retval); }'
+```
+
+If you access the filesystem through this path though, it should be the view of the mount namespace as seen by that given process.
+
+An alternative to the way above would be passing `-p` to `bpftrace`:
+
+```
+$ bpftrace -p <CONTAINER-PID> -e 'uretprobe:/usr/lib/x86_64-linux-gnu/libzookeeper_mt.so.2.0.0:zoo_set2 { printf("%d\n", retval); }'
+```
+
+Much cleaner than having to overlay path around.
+
+---
+
+In my case, uprobes me helped to find out that from time to time, `zoo_set2` returns `-4` which is an error code.
+
+Note that I was running `bpftrace` from the host &ndash; thanks to the [COS toolbox](https://cloud.google.com/container-optimized-os/docs/how-to/toolbox){:target="_blank"}, BPF tools were pre-installed there. Another option would be to install `bpftrace` right into my container. In that case I wouldn't need to lookup overlay paths and `MergedDir`. But from my experience, installing `bpftrace` into a container would take more time than these extra steps required to run it from the host, which is why I prefered this approach.
