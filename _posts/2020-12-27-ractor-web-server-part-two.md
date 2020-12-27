@@ -331,12 +331,13 @@ Now we have a tiny Rack app running on multiple CPUs powered by the Ractor primi
 
 I hope this post gave some overview about the current state of the Ractor pattern in Ruby, to both developers and Ruby contributors.
 
-If you are skimming over the post and are just curious about the internals, here's the full list of all things that I reported to the upstream as the result of the writing:
+If you are skimming over the post and are just curious about the internals, you can see the final version of the code [here](https://gist.github.com/kirs/2dd4fcae9983df8b7b5b6c335b97f8e3){:target="\_blank"}. Below is the list of all bugs/patches that I reported to the upstream as the result of the writing:
 
 - [https://bugs.ruby-lang.org/issues/17477](https://bugs.ruby-lang.org/issues/17477){:target="\_blank"}
 - [https://github.com/ruby/webrick/pull/65](https://github.com/ruby/webrick/pull/65){:target="\_blank"}
 - [https://github.com/ruby/ruby/pull/4007](https://github.com/ruby/ruby/pull/4007){:target="\_blank"}
 - [https://github.com/ruby/ruby/pull/4008](https://github.com/ruby/ruby/pull/4008){:target="\_blank"}
+- [https://github.com/rack/rack/pull/1726](https://github.com/rack/rack/pull/1726){:target="\_blank"}
 
 If you need a general refresher about Ractor, you should check out [ractor.md](https://github.com/ruby/ruby/blob/master/doc/ractor.md){:target="\_blank"} in the Ruby repo.
 
