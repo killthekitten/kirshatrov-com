@@ -21,7 +21,7 @@ require 'socket'
 
 pipe = Ractor.new do
   loop do
-    Ractor.yield(Ractor.recv, move: true)
+    Ractor.yield(Ractor.receive, move: true)
   end
 end
 
@@ -76,7 +76,7 @@ require 'webrick'
 
 pipe = Ractor.new do
   loop do
-    Ractor.yield(Ractor.recv, move: true)
+    Ractor.yield(Ractor.receive, move: true)
   end
 end
 
@@ -197,7 +197,7 @@ require '/Users/kir/src/github.com/ruby/ruby/lib/uri.rb'
 
 pipe = Ractor.new do
   loop do
-    Ractor.yield(Ractor.recv, move: true)
+    Ractor.yield(Ractor.receive, move: true)
   end
 end
 
