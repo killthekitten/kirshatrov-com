@@ -47,7 +47,7 @@ While I see more to be gained from the top way, it seems like there's so much sh
 
 ## Impact on the Ruby ecosystem
 
-Given my points from above, I could see web servers continuing to use the process (aka forking) model for a while (e.g. [Unicorn](https://github.com/defunkt/unicorn){:target="\_blank"}). Those applications that are built with thread safety in mind will continue using [Puma](https://github.com/puma/puma){:target="\_blank"}, perhaps in the [clustered mode](https://github.com/puma/puma#clustered-mode)){:target="\_blank"}.
+Given my points from above, I could see web servers continuing to use the process (aka forking) model for a while (e.g. [Unicorn](https://github.com/defunkt/unicorn){:target="\_blank"}). Those applications that are built with thread safety in mind will continue using [Puma](https://github.com/puma/puma){:target="\_blank"}, perhaps in the [clustered mode](https://github.com/puma/puma#clustered-mode){:target="\_blank"}).
 
 **For async workloads like background jobs, I could see the ecosystem slowly moving into the async IO model**. Having Sidekiq execute jobs concurrently through the event loop instead of threads could increase the throughput and save CPU work, especially for IO-bound workloads like webhook delivery.
 
