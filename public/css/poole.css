@@ -480,3 +480,37 @@ a.pagination-item:hover {
   padding: 6px 10px;
   font-size: 16px;
 }
+
+.kirs-photo-item {
+  margin: 0 0 20px 0;
+}
+
+.kirs-photo-item img {
+  margin: 0 auto;
+}
+
+.kirs-photo-item .caption {
+  font-style: italic;
+  font-size: 12pt;
+  padding: 12px 0;
+  text-align: center;
+}
+
+.kirs-photo-preface {
+  font-style: italic;
+  font-size: 12pt;
+  padding: 12px 0 20px;
+  text-align: center;
+}
+
+.kirs-photo-albums {
+  display: flex;
+  justify-content: center;
+}
+.kirs-photo-albums ul {
+  list-style-type: circle;
+}
+
+.kirs-photo-albums a {
+  font-size: 18pt;
+}
