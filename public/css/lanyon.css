@@ -108,6 +108,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
+@media (max-width: 30em) {
+  .masthead-title .right {
+    font-size: 1.1rem;
+  }
+}
+
 .masthead .left {
   float: left;
   left: 0;
