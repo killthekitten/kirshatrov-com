@@ -7,8 +7,9 @@ I enjoy beginner level film photography, mostly using a point-and-shoot camera. 
 
 <div class="kirs-photo-albums">
   <ul>
-    <li><a href="/photography/2018">2018</a></li>
-    <li><a href="/photography/2019">2019</a></li>
+    <li><a href="/photography/2021">2021</a></li>
     <li><a href="/photography/2020">2020</a></li>
+    <li><a href="/photography/2019">2019</a></li>
+    <li><a href="/photography/2018">2018</a></li>
   </ul>
 </div>
