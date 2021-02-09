@@ -6,7 +6,7 @@ comments: true
 published: true
 ---
 
-I’ve been playing with [Vitess](https://vitess.io/) at work, and I’ve been finding it extremely hard to Google for common issues and error messages from Vitess. While the official docs are improving, there’s a general lack of stack overflow -like tips for fixing silly errors. I decided to keep my own log in this post, partially for myself.
+I’ve been playing with [Vitess](https://vitess.io/){:target="\_blank"} at work, and I’ve been finding it extremely hard to Google for common issues and error messages from Vitess. While the official docs are improving, there’s a general lack of stack overflow -like tips for fixing silly errors. I decided to keep my own log in this post, partially for myself.
 
 ## Vitess on CI
 
@@ -79,7 +79,7 @@ Minitest::UnexpectedError: ActiveRecord::StatementInvalid: Mysql2::Error: vtgate
     app/models/product.rb:253:in `publish'
 ```
 
-What makes it harder to debug is that you don't see the full SQL query that failed. As I was making it work in a Rails app, I've added the following CI-only patch to Rails that
+What makes it harder to debug is that you don't see the full SQL query that failed. As I was making it work in a Rails app, I've added the following CI-only patch to Rails to log all queries that failed on vtgate.
 
 ```ruby
 module ActiveRecord
