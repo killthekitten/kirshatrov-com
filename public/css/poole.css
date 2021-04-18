@@ -516,3 +516,21 @@ a.pagination-item:hover {
 .kirs-photo-albums a {
   font-size: 18pt;
 }
+
+.kirs-posts {
+  margin-bottom: 80px;
+}
+
+.kirs-posts-year {
+  /* font-weight: bolder; */
+  font-size: 20px;
+}
+
+.kirs-posts-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.kirs-posts-item {
+  
+}

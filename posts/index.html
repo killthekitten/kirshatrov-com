@@ -3,33 +3,26 @@ layout: default
 title: Posts
 ---
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a {% if post.external_url %}target="_blank"{% endif %} href="{% if post.external_url %}{{ post.external_url }}{% else %}{{ site.baseurl }}{{ post.url }}{% endif %}">
-        {{ post.title }}
-      </a>
-    </h1>
+<div class="kirs-posts">
+  {% for post in site.posts  %}
+    {% capture this_year %}{{ post.date | date: "%Y" }}{% endcapture %}
+    {% capture next_year %}{{ post.previous.date | date: "%Y" }}{% endcapture %}
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
-  </div>
-  {% endfor %}
-</div>
-
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}{{ paginator.next_page_path }}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}{{paginator.previous_page_path}}">Newer</a>
+    {% if forloop.first %}
+    <h2 class="kirs-posts-year" id="{{ this_year }}-ref">{{this_year}}</h2>
+    <ul class="kirs-posts-list">
     {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
+
+    <li class="kirs-posts-item"><a href="{{ post.url }}">{{ post.title }}</a></li>
+
+    {% if forloop.last %}
+    </ul>
+    {% else %}
+      {% if this_year != next_year %}
+      </ul>
+      <h2 class="kirs-posts-year" id="{{ next_year }}-ref">{{next_year}}</h2>
+      <ul class="kirs-posts-list">
+      {% endif %}
+    {% endif %}
+{% endfor %}
 </div>
