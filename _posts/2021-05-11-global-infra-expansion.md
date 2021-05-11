@@ -16,8 +16,6 @@ The challenge comes with expiring those edge-cached responses: once the data has
 
 Having 200+ points of presence on the edge (the Cloudflare's [number](https://www.cloudflare.com/en-gb/network/){:target="\_blank"}) combined with frequent updates could make this multiplexing either wasteful (single update to source does a fan-out to _every_ edge), or you have to get really good at your cache keys. The [Cache-Tag way by CloudFlare](https://blog.cloudflare.com/introducing-a-powerful-way-to-purge-cache-on-cloudflare-purge-by-cache-tag){:target="\_blank"} might be a great solution for this.
 
-Cache tag
-
 For infrequently updated data, this solution could be simple and very cost effective, without having to replicate databases yourself like the other path below suggests.
 
 # Regional compute + replication
