@@ -6,6 +6,10 @@ comments: true
 published: true
 ---
 
+I wrote this post as I was playing with materializing tables in Vitess. I find that there's not that many resources online that walk through Vitess features. I hope this post is useful for whoever is looking at Vitess capabilities.
+
+***
+
 Let's imagine an example of the following schema in an abstract ecommerce app:
 
 ```sql
