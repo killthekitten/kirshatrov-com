@@ -22,7 +22,7 @@ Side note: I found Vitess Operator to be very easy to use; it cover all my basic
 
 I'm going to use a GKE cluster because that's what I'm familliar the most, but you could as well use Minikube or another Kubernetes offering.
 
-```
+```bash
 # create a tiny cluster
 $ gcloud container clusters create sample-vitess-cluster --cluster-version 1.17 --zone us-east1-b --num-nodes 5
 
@@ -176,7 +176,7 @@ The script creates a MySQL client per thread (that's important because the conne
 
 You should find a way to run the script in the same Kubernetes cluster, either by putting it into an existing app or by building a new Docker image.
 
-As soon as the script is running, you follow vttablet's stats on [http://localhost:15000/](http://localhost:15000/){:target="\_blank"}. There you'll see the **sawtooth-like QPS chart**.
+As soon as the script is running, you can follow vttablet's stats on [http://localhost:15000/](http://localhost:15000/){:target="\_blank"}. There you'll see the **sawtooth-like QPS chart**.
 
 <img width="715" height="404" src="/assets/post-images/vitess-throttle.png" style="display: block;margin-left: auto;margin-right: auto;" />
 
@@ -184,7 +184,7 @@ The sawtooth shows that clients perform writes and then backoff, and then write 
 
 ## Wrap up
 
-When doing the online schema migration, writing a backfill or importing data into the database, it's important that clients check the database health before writing. This little demo shows how that can be accomplished with what Vitess gives you. Make sure to read the [full guide](https://vitess.io/docs/reference/features/tablet-throttler/){:target="\_blank"} that describes all features all the throttler.
+When doing the online schema migration, writing a backfill, or importing data into the database, it's important that clients check the database health before writing. This little demo shows how that can be accomplished with what Vitess gives you. Make sure to read the [full guide](https://vitess.io/docs/reference/features/tablet-throttler/){:target="\_blank"} that describes all features all the throttler.
 
 Here are some things that I'd keep in mind if I was to roll this into production:
 
