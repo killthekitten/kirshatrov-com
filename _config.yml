@@ -1,6 +1,6 @@
 # Permalinks
 #
-permalink:           pretty
+permalink:           /posts/:title/
 
 # Setup
 title:               Kir Shatrov
