@@ -668,3 +668,13 @@ body {
   color: white;
   padding: 9px;
 }
+
+/* overriden by @kirs, July 2021 */
+.post-date {
+  margin-top: 0 !important;
+}
+
+/* overriden by @kirs, July 2021 */
+.page, .post {
+  margin-bottom: 1em;
+}
