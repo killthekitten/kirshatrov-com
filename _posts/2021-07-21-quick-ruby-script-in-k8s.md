@@ -6,7 +6,7 @@ comments: true
 published: true
 ---
 
-Sometimes I find myself in need of running some Ruby script on a live Kubernetes cluster. In today's example, it had to do with generating load on MySQL, which was tricker to do from my laptop. The script had to run close to where the workload runs in the cluster.
+Sometimes I find myself in need of running a Ruby script on a live Kubernetes cluster. In today's example, it had to do with generating load on MySQL, which was tricker to do from my laptop. The script had to run close to the workload in the cluster.
 
 I'm lazy and having to build and push a Docker container with my script would be a lot of extra work.
 
@@ -28,13 +28,12 @@ data:
     end
 
     require 'mysql2'
-
-    client = Mysql2::Client.new(host: "127.0.0.1", username: "user", database: 'commerce')
-   
-    client.query("select * from orders")
+    client = Mysql2::Client.new(database: 'commerce')
+    loop { client.query("select * from orders") }
+    # more code follows...
 ```
 
-And then the deployment that runs `ruby:2.7` image and execs the file defined in our config map.
+And then the deployment that pulls `ruby:2.7` image and runs the file from our config map.
 
 ```yaml
 apiVersion: apps/v1
@@ -44,9 +43,7 @@ metadata:
     app: load-generator
   name: load-generator
 spec:
-  progressDeadlineSeconds: 600
   replicas: 1
-  revisionHistoryLimit: 10
   selector:
     matchLabels:
       app: load-generator
@@ -57,7 +54,6 @@ spec:
     spec:
       containers:
       - image: ruby:2.7
-        imagePullPolicy: IfNotPresent
         name: ruby
         command: ["ruby"]
         args: ["/app/writer.rb"]
@@ -65,13 +61,11 @@ spec:
           - name: load-generator
             mountPath: /app/writer.rb
             subPath: writer.rb
-      dnsPolicy: ClusterFirst
       restartPolicy: Always
-      terminationGracePeriodSeconds: 30
       volumes:
         - name: load-generator
           configMap:
             name: load-generator
 ```
 
-All you need is `kubectl apply -f` the content below and you'll have your script running.
+All you need is `kubectl apply -f` YAMLs above and you'll have your script running.
