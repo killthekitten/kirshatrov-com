@@ -492,10 +492,10 @@ a.pagination-item:hover {
 }
 
 .kirs-photo-item .caption {
-  font-style: italic;
-  font-size: 12pt;
+  font-size: 11pt;
   padding: 12px 0;
   text-align: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .kirs-photo-preface {
