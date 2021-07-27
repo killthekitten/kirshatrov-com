@@ -64,3 +64,7 @@ Eventually I was able to push that to as many as **400 streams** without breakin
 Controlling many VReplication streams as part of my experiments was tricky because the CLI tool to manage it mostly designed for machines, not for humans. Vitess docs even recommend a tiny [Go program](https://github.com/vitessio/contrib/blob/master/vreplgen/vreplgen.go){:target="\_blank"} that would generate shell commands to start VReplication.
 
 To manage my experiments, I wrote a scrappy [ruby script](https://gist.github.com/kirs/d169c1534320c9e5f16b14007effcf22){:target="\_blank"} that allowed me to list, create, and delete streams without having to craft and escape SQL statements. Feel free to use it for your projects!
+
+## Further reading
+
+* [Analyzing VReplication behavior](https://github.com/vitessio/vitess/issues/8056){:target="\_blank"}
