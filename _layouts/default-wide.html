@@ -1,0 +1,20 @@
+<html> 
+  <head>
+    {% include head.html %}
+  </head>
+<body>
+<div class="min-h-screen flex flex-col">
+  <div class="relative text-center sm:mx-auto max-w-screen-lg">
+    {% include nav.html %}
+
+    {{ content }}
+    
+    <div class="pb-8 leading-6">
+      <div class="py-4"><a class="text-base text-gray-500 underline" href="/">Back to index</a></div>
+      <div class="py-3"><a class="text-sm text-gray-400 underline" href="kir@kirshatrov.com">kir@kirshatrov.com</a></div>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

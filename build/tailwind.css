@@ -1,0 +1,87 @@
+/* ./src/tailwind.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .post {
+    @apply text-left;
+  }
+  .post p {
+    @apply py-2 text-lg font-serif;
+  }
+  .post h1 {
+    @apply text-3xl font-sans;
+  }
+  .post h2 {
+    @apply text-2xl font-sans;
+  }
+  .post h3 {
+    @apply text-xl font-sans;
+  }
+  .post a {
+    @apply text-default-link;
+  }
+
+  .post ul {
+    list-style-type: disc;
+  }
+
+  .post ul ul {
+    padding-left: 40px;
+  }
+
+  .post li {
+    @apply font-serif;
+  }
+
+  .post .upd {
+    background: #fff2cc;
+    margin: 0 -10px;
+    padding: 6px 10px;
+    font-size: 16px;
+  }
+
+  /* Code */
+  code,
+  pre {
+    font-family: Menlo, Monaco, "Courier New", monospace;
+  }
+  code {
+    padding: 0.25em 0.5em;
+    font-size: 85%;
+    color: #bf616a;
+    background-color: #f9f9f9;
+    border-radius: 3px;
+  }
+  pre {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    font-size: 0.8rem;
+    line-height: 1.4;
+    white-space: pre;
+    white-space: pre-wrap;
+    word-break: break-all;
+    word-wrap: break-word;
+    background-color: #f9f9f9;
+  }
+  pre code {
+    padding: 0;
+    font-size: 100%;
+    color: inherit;
+    background-color: transparent;
+  }
+
+  /* Pygments via Jekyll */
+  .highlight {
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .highlight pre {
+    margin-bottom: 0;
+  }
+}

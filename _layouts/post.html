@@ -2,33 +2,30 @@
 layout: default
 ---
 
-<div class="post post-with-links">
-  <h1 class="post-title">{{ page.title }}</h1>
-  {{ content }}
+<div class="pt-3">
+  <h1 class="text-3xl pb-3">{{ page.title }}</h1>
+  <div class="post">{{ content }}</div>
 
-  <span class="post-date">{{ page.date | date: "%B %Y" }}</span>
+  <div class="text-base text-gray-600 font-serif mt-3"> Written in {{ page.date | date: "%B %Y" }}.</div>
 </div>
 
-<div class="sharing">
-  <div class="likely likely-big" data-title="{{ page.title }}">
-    <div class="twitter" data-via="{{ site.author.twitter }}">Tweet the link</div>
-  </div>
-</div>
-
-<h2>About the author</h2>
-<div class="kirs-bio">
-  <picture  class="kirs-bio-pic">
+<div class="m-auto mt-4">
+  <picture class="m-auto">
     <source srcset="/assets/layout-images/kirs.webp" type="image/webp">
     <source srcset="/assets/layout-images/kirs.jpg" type="image/jpeg">
-    <img src="/assets/layout-images/kirs.jpg" alt="Kir Shatrov">
+    <img width="110" height="110" class="m-auto rounded-full" src="/assets/layout-images/kirs.jpg" alt="Kir Shatrov">
   </picture>
 
-  <span class="kirs-bio-text">
-    Kir Shatrov helps businesses to grow by scaling the infrastructure. He likes to write about software, scalability and interesting stories that he runs into at work. Follow him on Twitter to get the latest updates: <a href="https://twitter.com/kirshatrov">@kirshatrov</a>.
-  </span>
+  <p class="font-serif mt-4">
+    Kir Shatrov helps businesses to grow by scaling the infrastructure. He writes about software, scalability and the ecosystem. <a class="underline" href="https://twitter.com/kirshatrov">Follow him on Twitter</a> to get the latest updates.
+  </p>
 </div>
 
-<div class="related">
+<div class="leading-6">
+  <div class="py-3"><a class="text-sm text-gray-400 underline" href="kir@kirshatrov.com">kir@kirshatrov.com</a></div>
+</div>
+
+<!-- <div class="related">
   <h2>Related Posts</h2>
   <ul class="related-posts">
     {% for post in site.related_posts limit:3 %}
@@ -42,8 +39,4 @@ layout: default
       </li>
     {% endfor %}
   </ul>
-</div>
-
-<h2>Comments</h2>
-
-{% include disqus.html %}
+</div> -->

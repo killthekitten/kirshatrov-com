@@ -12,7 +12,7 @@ For my own reflection, I wanted to write down what that means for performance an
 
 I will assume that the audience already knows the difference between [threads vs processes model in UNIX](<https://en.wikipedia.org/wiki/Thread_(computing)#Threads_vs._processes_pros_and_cons>){:target="\_blank"} and the [Little's law](https://en.wikipedia.org/wiki/Little%27s_law){:target="\_blank"}.
 
-<p class="kirs-upd">
+<p class="upd">
 Updated on Jan 9, 2021: thanks to the feedback from <a href="https://github.com/ioquatix" target="_blank">Samuel Williams</a>, I’ve revised the post with findings from <a href="https://github.com/socketry/falcon" target="_blank">Falcon</a>, the async web server written in Ruby.</p>
 
 ## Learning from Python
@@ -29,7 +29,7 @@ Quoting the author, this means that execution time is not distributed "fairly" a
 
 ## Learning from Falcon
 
-<p class="kirs-upd">
+<p class="upd">
 (added on Jan 9, 2021)
 </p>
 

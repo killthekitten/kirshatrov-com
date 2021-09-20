@@ -18,7 +18,7 @@ Having 200+ points of presence on the edge (the Cloudflare's [number](https://ww
 
 For infrequently updated data, this solution could be simple and very cost effective, without having to replicate databases yourself like the other path below suggests.
 
-# Regional compute + replication
+## Regional compute + replication
 
 In comparison with the previous way, we do not involve edge and instead deploy **regional compute**. The difference is that regional compute assumes only having some presence on each continent. Something like 5-8 regions makes it enough to cover the most of the world. This is different from the edge approach where you may end up having [hundreds](https://www.cloudflare.com/en-gb/network/){:target="\_blank"} of points of presence.
 
@@ -28,6 +28,6 @@ This works quite well with dynamic but read-only workloads, say templated pages 
 
 It's worth mentioning that running regional compute can get more expensive because of storage costs that now multiple by the number of regions you use - unless you can somehow replicate selectively.
 
-# Conclusion
+## Conclusion
 
 Every app and business is unique and the mental model I presented may not work for everyone. Please share your findings or alternative paths that you see.
