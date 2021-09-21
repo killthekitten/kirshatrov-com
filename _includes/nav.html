@@ -1,11 +1,11 @@
 <div class="mb-0.5 pt-5 pb-4 text-default-link">
   <div class="space-x-2">
-    <div class="inline-block font-bold text-gray-900 {% if page.url == '/' %} border-b-2 border-gray-900{% endif %}"><a class="" href="/">Kir Shatrov</a></div>
+    <div class="inline-block font-bold {% if page.dark %}text-gray-200 {% else %}text-gray-900 {% endif %} {% if page.url == '/' %} border-b-2 border-gray-900{% endif %}"><a href="/">Kir Shatrov</a></div>
 
-    <div class="inline-block border-b-2 border-transparent {% if page.url == '/posts/' %}border-palette-a text-palette-a {% else %} text-gray-600 {% endif %} hover:border-palette-a"><a class="py-2 px-0" href="/posts/">Posts</a></div>
-    <div class="inline-block border-b-2 border-transparent {% if page.url == '/speaking/' %}border-palette-g text-palette-g {% else %} text-gray-600 {% endif %} hover:border-palette-g"><a class="py-2 px-0" href="/speaking/">Speaking</a></div>
-    <div class="inline-block border-b-2 border-transparent {% if page.url == '/photography/' %}border-palette-c text-palette-c {% else %} text-gray-600 {% endif %} hover:border-palette-c"><a class="py-2 px-0" href="/photography/">Photo</a></div>
-    <div class="inline-block border-b-2 border-transparent {% if page.url == '/travels/' %}border-palette-b text-palette-b {% else %} text-gray-600 {% endif %} hover:border-palette-b"><a class="py-2 px-0" href="/travels/">Travel</a></div>
-    <div class="inline-block border-b-2 border-transparent {% if page.url == '/fabrication/' %}border-palette-f text-palette-f {% else %} text-gray-600 {% endif %} hover:border-palette-f"><a class="py-2 px-0" href="/fabrication">Fabrication</a></div>
+    <div class="inline-block border-b-2 border-transparent {% if page.url == '/posts/' %}border-palette-a text-palette-a {% else %} {% if page.dark %}text-gray-200{% else %} text-gray-600 {% endif %} {% endif %} hover:border-palette-a hover:text-palette-a"><a class="py-2 px-0" href="/posts/">Posts</a></div>
+    <div class="inline-block border-b-2 border-transparent {% if page.url == '/speaking/' %}border-palette-g text-palette-g {% else %} {% if page.dark %}text-gray-200{% else %} text-gray-600 {% endif %} {% endif %} hover:border-palette-g hover:text-palette-g"><a class="py-2 px-0" href="/speaking/">Speaking</a></div>
+    <div class="inline-block border-b-2 border-transparent {% if page.url == '/photography/' %}border-palette-c text-palette-c {% else %} {% if page.dark %}text-gray-200{% else %} text-gray-600 {% endif %} {% endif %} hover:border-palette-c hover:text-palette-c"><a class="py-2 px-0" href="/photography/">Photo</a></div>
+    <div class="inline-block border-b-2 border-transparent {% if page.url == '/travels/' %}border-palette-b text-palette-b {% else %} {% if page.dark %}text-gray-200{% else %} text-gray-600 {% endif %} {% endif %} hover:border-palette-b hover:text-palette-b"><a class="py-2 px-0" href="/travels/">Travel</a></div>
+    <div class="inline-block border-b-2 border-transparent {% if page.url == '/fabrication/' %}border-palette-f text-palette-f {% else %} {% if page.dark %}text-gray-200{% else %} text-gray-600 {% endif %} {% endif %} hover:border-palette-f hover:text-palette-f"><a class="py-2 px-0" href="/fabrication">Fabrication</a></div>
   </div>
 </div>
