@@ -67,6 +67,10 @@
     @apply font-serif text-left;
   }
 
+  .photography .caption {
+    @apply font-serif text-gray-200 italic pt-1;
+  }
+
   /* Code */
   code,
   pre {
