@@ -43,6 +43,22 @@
     font-size: 16px;
   }
 
+  .speaking a {
+    @apply underline;
+  }
+
+  .speaking a:hover {
+    @apply text-palette-g;
+  }
+
+  .speaking h3 {
+    @apply text-lg pt-6 pb-3;
+  }
+
+  .speaking p {
+    @apply font-serif text-left;
+  }
+
   /* Code */
   code,
   pre {
