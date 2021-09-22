@@ -13,7 +13,7 @@ module.exports = {
       colors: {
         'palette-a': '#80aeb5',
         'palette-b': '#ff5645',
-        'palette-c': '#19503d',
+        'palette-c': '#ffca9c',
         'palette-d': '#174f3c',
         'palette-e': '#ffca9c',
         'palette-f': '#e58df0',
