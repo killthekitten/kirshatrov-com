@@ -3,7 +3,7 @@ layout: page
 title: Speaking
 ---
 
-<div class="speaking">
+<div class="speaking px-3 md:px-0">
   <p>
     I love giving talks and sharing knowledge, whether by talking about establishing SRE practices or about deep technical problems. The range of topic varies from capacity planning, on-boarding teams to the on-call rotation, ChatOps, to building developer tools for large-scale platforms.
   </p>
