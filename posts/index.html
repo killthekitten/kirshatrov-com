@@ -12,7 +12,7 @@ title: Posts
     <h2 class="text-sm pt-3" id="{{ this_year }}-ref">{{this_year}}</h2>
     {% endif %}
 
-    <div class="text-gray-900 hover:underline"><a href="{% if post.external_url %}{{ post.external_url }}{% else %}{{ post.url }}{% endif %}">{{ post.title }}</a></div>
+    <div class="text-gray-900 hover:text-palette-a hover:underline"><a href="{% if post.external_url %}{{ post.external_url }}{% else %}{{ post.url }}{% endif %}">{{ post.title }}</a></div>
 
     {% if forloop.last %}
     {% else %}

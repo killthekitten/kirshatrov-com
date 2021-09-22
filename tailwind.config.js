@@ -11,8 +11,8 @@ module.exports = {
     },
     extend: {
       colors: {
-        'palette-a': '#463358',
-        'palette-b': '#80aeb5',
+        'palette-a': '#80aeb5',
+        'palette-b': '#ff5645',
         'palette-c': '#19503d',
         'palette-d': '#174f3c',
         'palette-e': '#ffca9c',

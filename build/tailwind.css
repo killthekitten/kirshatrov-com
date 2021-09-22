@@ -43,6 +43,14 @@
     font-size: 16px;
   }
 
+  .travels a {
+    @apply underline;
+  }
+
+  .travels a:hover {
+    @apply text-palette-b;
+  }
+
   .speaking a {
     @apply underline;
   }
