@@ -20,7 +20,12 @@
     @apply text-xl font-sans;
   }
   .post a {
-    @apply text-default-link;
+    /* @apply text-default-link underline; */
+    @apply text-gray-500 underline;
+  }
+
+  .about-me a, .highlights a {
+    @apply underline text-gray-500;
   }
 
   .post ul {
@@ -69,6 +74,26 @@
 
   .photography .caption {
     @apply font-serif text-gray-200 italic pt-1;
+  }
+
+  /* Quotes */
+  .post blockquote {
+    padding: 0.5rem 1rem;
+    margin: 0.8rem 0;
+    color: #7a7a7a;
+    border-left: 0.25rem solid #e5e5e5;
+  }
+  .post blockquote p {
+    padding: 0;
+  }
+  .post blockquote p:last-child {
+    margin-bottom: 0;
+  }
+  @media (min-width: 30em) {
+    .post blockquote {
+      padding-right: 5rem;
+      padding-left: 1.25rem;
+    }
   }
 
   /* Code */
