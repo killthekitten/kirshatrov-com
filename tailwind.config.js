@@ -17,7 +17,7 @@ module.exports = {
         'palette-d': '#174f3c',
         'palette-e': '#ffca9c',
         'palette-f': '#e58df0',
-        'default-link': '#003d73',
+        // 'default-link': '#003d73',
         'palette-g': '#ff7693',
         'map-a': '#17263c',
         'map-b': '#515c6d',
