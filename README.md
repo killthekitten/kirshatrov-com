@@ -4,4 +4,6 @@ This is a repo for [kirshatrov.com](https://kirshatrov.com), my personal website
 
 ```
 $ npx tailwindcss -i ./build/tailwind.css -o public/css/tailwind.css --watch
+
+$ NODE_ENV=production npx tailwindcss -i ./build/tailwind.css -o public/css/tailwind.css
 ```
