@@ -6,8 +6,8 @@ comments: true
 published: true
 ---
 
-<div class="kirs-highlighted">
-  <strong>[UPDATED]</strong> Since this post was published, MRI got a <a href="https://github.com/ruby/ruby/blob/trunk/doc/signals.rdoc" target="_blank">documentation page</a> with what's safe and what's not safe to call from signal handlers. I highly recommend reading that one if you've run across my post.
+<div class="upd">
+  <strong>[UPDATED]</strong> Since this post was published, MRI got a <a href="https://github.com/ruby/ruby/blob/012faccf040344360801b0fa77e85f9c8a3a4b2c/doc/signals.rdoc" target="_blank">documentation page</a> with what's safe and what's not safe to call from signal handlers. I highly recommend reading that one if you've run across my post.
 </div>
 
 I have been debugging signal handlers in Ruby and at some point I started to ask questions that no one could answer.

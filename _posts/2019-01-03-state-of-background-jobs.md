@@ -129,6 +129,6 @@ I also have to admit that whatever I imagined in this post could take massive in
 
 Who knows, maybe this is just an idea for an upcoming Hack Days?
 
-<div class="kirs-highlighted">
+<div class="upd">
   If problems mentioned resonate with what you're working on, I'd be very curious to hear from you! Reach out to <a href="https://twitter.com/kirshatrov">@kirshatrov</a> on Twitter (my DM is open) or at <a href="mailto:kir@kirshatrov.com">kir@kirshatrov.com</a>.
 </div>

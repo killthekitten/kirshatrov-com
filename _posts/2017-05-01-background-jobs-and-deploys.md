@@ -62,6 +62,6 @@ Today I'm working on generic API for resumable/interruptible jobs which would he
 
 If the API turns our to be successful I'll probably share it publicly. Ping me if you're have any ideas or if you would like a sneak peek of the API.
 
-<div class="kirs-highlighted">
+<div class="upd">
   <strong>[UPDATED]</strong> My team at Shopify has published the <a href="https://github.com/Shopify/job-iteration" target="_blank">job-iteration gem</a> which does exactly what my post describes.
 </div>
