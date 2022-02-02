@@ -7,7 +7,7 @@ published: true
 ---
 
 
-For the past six years I've been working on scaling Shopify, and a large part of that has been related to scaling databases. I've been  watching the databases space, and specifically _Database-as-a-Service_ (DBaaS) offerings, as we were building one for internal use at Shopify.
+For the past six years I've been working on scaling Shopify, and a large part of that has been related to scaling databases. I've been  watching the databases space, and specifically _Database-as-a-Service_ (DBaaS) offerings, as we were [building one](https://www.youtube.com/watch?v=Jz4VQqCrII4){:target="\_blank"} for internal use at Shopify.
 
 This post is a brief analysis of where the DBaaS ecosystem is moving, what have been some of the recent shifts, and why it's a profitable business.
 
@@ -15,7 +15,7 @@ This post is a brief analysis of where the DBaaS ecosystem is moving, what have 
 
 The mass market of database as a service offering started with Heroku in 2007. They were the first to launch a PostgreSQL offering that could be configured for your app with a single click. It went off really well with the popularity of Rails and Heroku as the easiest hosting solution.
 
-Amazon's RDS followed in 2009, first supporting only MySQL, and adding support for PostgreSQL in 2013.
+Amazon's RDS followed in 2009, first supporting only MySQL, and adding support for PostgreSQL in 2013.
 
 Around the same time, Heroku noticed demand for managed Postgres for apps that run outside Heroku, and released the standalone offering.
 
