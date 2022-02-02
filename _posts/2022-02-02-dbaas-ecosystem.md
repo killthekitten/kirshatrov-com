@@ -7,7 +7,7 @@ published: true
 ---
 
 
-For the past six years I've been working on scaling Shopify, and a large part of that has been related to scaling databases. I've been  watching the databases space, and specifically Database-as-a-Service (DBaaS) offerings, as we were building one for internal use at Shopify.
+For the past six years I've been working on scaling Shopify, and a large part of that has been related to scaling databases. I've been  watching the databases space, and specifically _Database-as-a-Service_ (DBaaS) offerings, as we were building one for internal use at Shopify.
 
 This post is a brief analysis of where the DBaaS ecosystem is moving, what have been some of the recent shifts, and why it's a profitable business.
 
@@ -40,7 +40,7 @@ EC2 r5.4xlarge <sup>2</sup><br/>16 vCPU / 128 Gb RAM / 1.5 TB of io1 SSD | $1,96
 <p><sup>2</sup> I chose the r5 instance type as it's memory-optimized and recommended for high-performance databases</p>
 </div>
 
-To my calculations above, Heroku's margin is about 2x - in other words, for a Postgres instance that costs you $1,200, Heroku's infrastructure costs on AWS would be as low as $600. And doesn't take into account any vendor discounts that AWS usually gives.
+To my calculations above, Heroku's margin is about 2x &mdash; in other words, for a Postgres instance that costs you $1,200, Heroku's infrastructure costs on AWS would be as low as $600. And doesn't take into account any vendor discounts that AWS usually gives.
 
 RDS' pricing is close to Heroku in the order of magnitude, which means that AWS has a similar (if not larger) margin because they own the hardware and the internal price of EC2 must be even lower. And if as a cloud provider you can estimate that a typical lifetime of a database is at least couple years, and get an instance reservation and pay upfront, then you can another 60% discount on AWS.
 
@@ -52,7 +52,7 @@ All these companies that launched on of Heroku's and AWS' database offerings hav
 
 It's common to [implement application-level sharding](https://shopify.engineering/a-pods-architecture-to-allow-shopify-to-scale){:target="\_blank"}, but that incurs higher complexity and (often) an open-heart surgery of production data. Sometimes, it's much cheaper to do sharding on a layer below the application.
 
-This spawned the next generation of database offerings, such as [PlanetScale](https://planetscale.com/){:target="\_blank"} (aka hosted Vitess), [Aurora](https://aws.amazon.com/rds/aurora/){:target="\_blank"}, and [Hyperscale](https://docs.microsoft.com/en-us/azure/postgresql/hyperscale/overview){:target="\_blank"} (aka Citus managed by Microsoft). All of them give something that looks like the same relational MySQL or Postgres, but behind 
+This spawned the next generation of database offerings, such as [PlanetScale](https://planetscale.com/){:target="\_blank"} (aka hosted Vitess), [Aurora](https://aws.amazon.com/rds/aurora/){:target="\_blank"}, and [Hyperscale](https://docs.microsoft.com/en-us/azure/postgresql/hyperscale/overview){:target="\_blank"} (aka [Citus](https://www.citusdata.com/){:target="\_blank"} managed by Microsoft). All of them give something that looks like the same relational MySQL or Postgres, but provides 'automatic' horizontal scaling behind.
 
 Same happened for non-relational databases like Redis. [Redis Labs](https://redis.com/){:target="\_blank"} started from offering single Redis instances and moved to Redis Cluster that scales behind the scenes.
 
