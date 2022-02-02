@@ -58,10 +58,8 @@ Same happened for non-relational databases like Redis. [Redis Labs](https://redi
 
 ## Wrap up
 
-This is a great time to run and sell value added infrastructure on compute, and the larger you get, the cheaper that infrastructure is for you to run due discounts and reservations.
+This is a great time to run and sell value added infrastructure on compute, and the larger you get, the cheaper that infrastructure is for you to run due discounts and reservations from your cloud provider.
 
-Large companies would run things internally, but there's a great market for small and medium size companies who're willing to pay for their databases to be hosted by someone, as hiring DBAs is even harder than hiring SREs.
+Large companies would run things internally, but there's a decent market for small and medium size companies who're willing to pay for their databases to be hosted by someone, as hiring DBAs is even harder than hiring SREs.
 
-We're starting to see the rise of managed, horizontally scaled databases as a service. Single instance databases would merely come as building block of orchestrated systems like [Vitess](https://vitess.io/){:target="\_blank"}.
-
-
+We're starting to see the rise of managed, horizontally scalable databases as a service. Single instance databases would merely come as a thing for small apps, or as building block of orchestrated systems like [Vitess](https://vitess.io/){:target="\_blank"}.
