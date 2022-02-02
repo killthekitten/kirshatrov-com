@@ -44,7 +44,9 @@ To my calculations above, Heroku's margin is about 2x &mdash; in other words, fo
 
 RDS' pricing is close to Heroku in the order of magnitude, which means that AWS has a similar (if not larger) margin because they own the hardware and the internal price of EC2 must be even lower. And if as a cloud provider you can estimate that a typical lifetime of a database is at least couple years, and get an instance reservation and pay upfront, then you can another 60% discount on AWS.
 
-Like many cloud offerings built on top of Compute, DBaaS is a highly marginal business that players are interested in getting into.
+In another words, this is a rough illustration of the actual cost of a database managed for you by Heroku or AWS. In most cases, that cost is well worth it because you save on not having to hire DBAs who'd manage, backup (!) and run your DBs. But on another side, you can see how money is made there.
+
+Like many cloud offerings built on top of Compute, **DBaaS is a highly marginal business** that players are interested in getting into.
 
 ## Demand for scalable databases
 
