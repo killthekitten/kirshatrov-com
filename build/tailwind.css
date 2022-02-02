@@ -96,6 +96,27 @@
     }
   }
 
+  .post table {
+    width: 100%;
+    @apply py-2 pt-3 font-serif;
+  }
+
+  .post table td {
+    @apply py-2 mx-5 font-serif;
+  }
+
+  .post table tr:nth-child(even) {
+    background: #f1efef
+  }
+
+  .post .footnotes {
+    @apply ml-5;
+  }
+
+  .post .footnotes p {
+    @apply text-sm;
+  }
+
   /* Code */
   code,
   pre {
