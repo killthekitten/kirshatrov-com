@@ -3,7 +3,7 @@ layout: post
 title: "DBaaS ecosystem and economics"
 date: 2022-02-02
 comments: true
-published: false
+published: true
 ---
 
 
